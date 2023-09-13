@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $server = "localhost";
     $username = "root"; // Default username for XAMPP MySQL
     $password = "";     // Default password for XAMPP MySQL (empty by default)
-    $database = "your_database_name"; // Replace with your database name
+    $database = "itb"; // Replace with your database name
 
     // Create a connection
     $conn = new mysqli($server, $username, $password, $database);
@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare a SQL statement
-    $stmt = $conn->prepare("SELECT * FROM users WHERE username = ? AND password = ?");
+    $stmt = $conn->prepare("SELECT * FROM logininfo WHERE username = ? AND password_hash = ?");
     $stmt->bind_param("ss", $entered_username, $entered_password);
     $stmt->execute();
     $result = $stmt->get_result();
