@@ -23,10 +23,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Prepare a SQL statement
-    $stmt = $conn->prepare("SELECT * FROM logininfo WHERE username = ? AND password_hash = ?");
-    $stmt->bind_param("ss", $entered_username, $entered_password);
-    $stmt->execute();
-    $result = $stmt->get_result();
+    // $stmt = $conn->prepare("SELECT * FROM logininfo WHERE username = ? AND password_hash = ?");
+    // $stmt->bind_param("ss", $entered_username, $entered_password);
+    // $stmt->execute();
+    // $result = $stmt->get_result();
+
+    $sql = "SELECT * FROM logininfo WHERE username = '$entered_username' AND password_hash = '$entered_password'"; // password = No' OR '1'='1 
+    // echo $sql;
+
+    // Execute the query
+    $result = mysqli_query($conn, $sql);
+
 
     if ($result->num_rows > 0) {
         // Authentication successful
