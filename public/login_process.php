@@ -38,13 +38,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows > 0) {
         // Authentication successful
         $_SESSION["authenticated"] = true;
-        header("Location: dashboard.php"); 
-        exit();
+        $_SESSION['user_id'] = $entered_username;
+        header("Location: dashboard.php");
     } else {
         // Authentication failed
         $_SESSION["error"] = "Invalid username or password.";
-        header("Location: login.php"); 
-        exit();
+        header("Location: login.php");
     }
 
     $stmt->close();
