@@ -21,15 +21,11 @@
     if (isset($_SESSION['user_id'])) {
         // Retrieve the user ID
         $user_id = $_SESSION['user_id'];
-        echo $user_id;
-
         setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
     } else {
         // redirect to the login page
         header("Location: login.php");
     }
     ?>
-
-
 </body>
 </html>
