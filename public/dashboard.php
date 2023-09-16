@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="../assets/css/dash.css">
-    <link rel="php" href="../dash">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="../assets/js/dash.js"></script>
 </head>
 <body>
     <div class="container">
@@ -21,15 +22,11 @@
         // Retrieve the user ID
         $user_id = $_SESSION['user_id'];
         echo $user_id;
-        // Now you can use $user_id as the user's ID in the dashboard page
 
-        
-
-
+        setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
     } else {
-        // User is not authenticated; you can redirect them to the login page or handle it accordingly
+        // redirect to the login page
         header("Location: login.php");
-
     }
     ?>
 
