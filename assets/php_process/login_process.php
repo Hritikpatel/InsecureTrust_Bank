@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Prepare a SQL statement
+    // // TODO FIX FOR LOGIN BYPASS
     // $stmt = $conn->prepare("SELECT * FROM logininfo WHERE username = ? AND password_hash = ?");
     // $stmt->bind_param("ss", $entered_username, $entered_password);
     // $stmt->execute();
@@ -39,11 +39,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION["authenticated"] = true;
         $_SESSION['user_id'] = $entered_username;
-        header("Location: dashboard.php");
+        header("Location: ../../public/dashboard.php");
     } else {
         // Authentication failed
         $_SESSION["error"] = "Invalid username or password.";
-        header("Location: login.php");
+        header("Location: ../../public/login.php");
     }
 
     $stmt->close();
