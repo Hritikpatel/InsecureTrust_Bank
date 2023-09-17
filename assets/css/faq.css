@@ -1,0 +1,26 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    padding: 20px;
+}
+
+.logo{
+    font-weight: 900;
+    font-size: 32px;
+}
+.list{
+    display: flex;
+    list-style-type: none;
+    font-weight: 600;
+}
+.item{
+    margin-inline: 10px;
+}
