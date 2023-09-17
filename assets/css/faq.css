@@ -8,7 +8,7 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
-
+    /* height: 40px; */
     padding: 20px;
 }
 
@@ -22,5 +22,14 @@
     font-weight: 600;
 }
 .item{
-    margin-inline: 10px;
+    padding: 10px;
+    padding-inline: 20px;
+    width: max-content;
+    /* margin-inline: 10px; */
+}
+.active{
+    /* font-weight: 600; */
+    /* font-size: 18px; */
+    background-color: rgba(125, 125, 125, 0.1);
+    border-radius: 10px;
 }
