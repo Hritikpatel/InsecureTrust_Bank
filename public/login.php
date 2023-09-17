@@ -17,7 +17,7 @@
             <label for="password">Password:</label>
             <input type="text" id="password" name="password" required>
             <br>
-            <button type="submit">Login</button>
+            <button type="i9">Login</button>
         </form>
     </div>
 </body>
