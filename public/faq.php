@@ -10,20 +10,21 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
+    <nav class="navbar">
+        <div class="logo">
+            ITB
+        </div>
+        <ul class="list">
+            <li class="item ">Home</li>
+            <li class="item ">About Us</li>
+            <li class="item ">Discover</li>
+            <li class="item ">Support</li>
+            <li class="item active">FAQs</li>
+        </ul>
+        <a href="login.php" ><button type="button" class="btn">Login</button></a>
+    </nav>
     <div class="body">
-        <nav class="navbar">
-            <div class="logo">
-                ITB
-            </div>
-            <ul class="list">
-                <li class="item ">Home</li>
-                <li class="item ">About Us</li>
-                <li class="item ">Discover</li>
-                <li class="item ">Support</li>
-                <li class="item active">FAQs</li>
-            </ul>
-            <a href="login.php" ><button type="button" class="btn">Login</button></a>
-        </nav>
+        
     </div>
 </body>
 </html>
