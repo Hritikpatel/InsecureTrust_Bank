@@ -6,6 +6,9 @@
     --inactive-color: rgb(100, 100, 100);
     --White: white;
 }
+*::-webkit-scrollbar{
+    display: none;
+}
 .navbar {
     display: flex;
     padding: 20px;
@@ -42,9 +45,6 @@
     color: var(--active-color);
     border-radius: 10px;
 }
-.item:hover > .active{
-    color: var(--inactive-color);
-}
 a{
     display: block;
     text-decoration: none;
@@ -59,9 +59,161 @@ a{
     border-radius: 500px;
     font-weight: 600;
     cursor: pointer;
-    transition: 300ms ease-in-out;
+    /* transition: 300ms ease-in-out; */
 }
 .btn:hover{
     background-color: var(--active-color);
     color: var(--White);
 }
+
+.body{
+    height: 1000svh;
+    margin-inline: 10px;
+    background-color: rgb(25, 25, 25);
+    border-radius: 20px 20px 0 0;
+}
+.top{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+    align-content: space-around;
+    padding-top: 50px;
+}
+.sub{
+    color: var(--White);
+    font-weight: 400;
+    font-size: 24px;
+    margin-block: 20px;
+}
+.heading{
+    color: var(--White);
+    font-weight: 600;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+.searchBarForm{
+    background-color: var(--White);
+    width: 50%;
+    height: 50px;
+    border-radius: 500px;
+    overflow: hidden;
+}
+#searchbar, #searchbar:focus{
+    width: 86.8%;
+    height: 100%;
+    font-size: 18px;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+}
+#searchBtn{
+    background-color: var(--White);
+    width: 10%;
+    height: 100%;
+    border: none;
+    /* border-radius: 0 200px 200px 0; */
+    cursor: pointer;
+}
+.categories{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: stretch;
+    list-style-type: none;
+    color: var(--White);
+}
+.tags{
+    margin-inline: 50px;
+    padding: 10px;
+    padding-inline: 20px;
+    color: var(--inactive-color);
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 18px;
+}
+.tags:hover{
+    color: var(--White);
+    font-weight: 700;
+    /* border-bottom: 2px solid var(--White) */
+}
+.activeTag{
+    font-weight: 700;
+    color: var(--White);
+    border-bottom: 2px solid var(--White)
+}
+.questionCont {
+    margin-top: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .questionCont h1 {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  .questionCont .card {
+    width: 85%;
+    transition: 3s ease all;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  }
+  .questionCont .card .question {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5px;
+    align-items: center;
+  }
+  .questionCont .questionpara p {
+    font-weight: 700;
+    color: hsl(240, 6%, 50%);
+  }
+  .answer {
+    max-height: 0;
+  
+    overflow: hidden;
+    transition: 0.5s ease max-height;
+  }
+  .questionCont .card .arrowCont {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 7px;
+    -webkit-user-select: none;
+    user-select: none;
+    transition: 0.5s ease transform;
+  }
+  .questionCont .card .arrowCont img {
+    margin-top: 3px;
+  }
+  .questionCont .card .arrowCont:hover {
+    background-color: hsla(240, 6%, 50%, 0.226);
+  }
+  .questionCont .card .arrowCont:active {
+    background-color: hsla(240, 6%, 50%, 0.514);
+  }
+  .answer .answerPara p {
+    padding: 15px 10px;
+    padding-top: 0%;
+    color: hsl(240, 6%, 50%);
+    line-height: 17px;
+  }
+  .questionCont .card.active .questionpara p {
+    color: #000;
+  }
+  .questionCont .card.active .answer {
+    height: auto;
+    max-height: 700px;
+  }
+  .questionCont .card.active .arrowCont {
+    transform: rotate(-180deg);
+  }
+  
