@@ -16,13 +16,13 @@
                 ITB
             </div>
             <ul class="list">
-                <li class="item active">Home</li>
-                <li class="item active">About Us</li>
-                <li class="item active">Discover</li>
-                <li class="item active">Support</li>
+                <li class="item ">Home</li>
+                <li class="item ">About Us</li>
+                <li class="item ">Discover</li>
+                <li class="item ">Support</li>
                 <li class="item active">FAQs</li>
             </ul>
-            <a href="login.php"><button type="button">Log In</button></a>
+            <a href="login.php" ><button type="button" class="btn">Login</button></a>
         </nav>
     </div>
 </body>
