@@ -145,9 +145,17 @@ a{
     color: var(--White);
     border-bottom: 2px solid var(--White)
 }
+.faqs{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
 .questionCont {
     margin-top: 50px;
-    width: 100%;
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -205,17 +213,17 @@ a{
   .answer .answerPara p {
     padding: 15px 10px;
     padding-top: 0%;
-    color: hsl(240, 6%, 50%);
-    line-height: 17px;
+    color: var(--White);
+    line-height: 28px;
   }
-  .questionCont .card .Queactive .questionpara p {
-    color: #000;
+  .questionCont .card.Queactive .questionpara p {
+    color: var(--White);
   }
-  .questionCont .card .Queactive .answer {
+  .questionCont .card.Queactive .answer {
     height: auto;
     max-height: 700px;
   }
-  .questionCont .card .Queactive .arrowCont {
+  .questionCont .card.Queactive .arrowCont {
     transform: rotate(-180deg);
   }
   
