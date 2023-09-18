@@ -43,7 +43,7 @@
                 ?>
             </span>
         </section>
-        <ul class="categories">
+        <ul class="categories", id="categories">
             <li class="tags activeTag" id="account">Account</li>
             <li class="tags" id="banking">Online Banking</li>
             <li class="tags" id="trans">Transactions</li>
