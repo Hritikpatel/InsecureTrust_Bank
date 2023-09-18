@@ -306,7 +306,10 @@ const mainContainerEl = document.getElementById("mainContainer");
 var activeCategory = "account";
 var tags = document.querySelectorAll(".tags");
 const searchInput = document.getElementById("searchbar");
+var oldData = document.getElementById("categories").innerHTML;
 
+
+// Function to display tab related questions
 function FAQuestions(activeCategory) {
   if (activeCategory=="account"){
     return accountFAQ.forEach((item) => { // TODO if here
@@ -335,6 +338,7 @@ function FAQuestions(activeCategory) {
   }
 }
 
+// Function to add questions and answers to website
 function createHTMLElements(question, answer) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -371,57 +375,53 @@ function createHTMLElements(question, answer) {
   mainContainerEl.appendChild(card);
 }
 
-FAQuestions(activeCategory);
-
-
+// Function to handle form submission
 document.getElementById("form").addEventListener("submit", function(event) {
+  
   // event.preventDefault(); // Prevent the default form submission behavior
   
   var searchbar = document.getElementById("searchbar");
   var searchTerm = document.getElementById("searchTerm");
   // Get form data
   var formData = searchbar.value;
-  searchTerm.innerText = formData;
-  searchFAQ(formData);
+  // searchTerm.innerText = formData
+  document.getElementById("categories").innerHTML = '<li class="tags activeTag" id="result">Result</li>';
 });
 
-
-
-  tags.forEach(function(tag) {
-    tag.addEventListener("click", function() {
-      
-      var oldActiveCategory = activeCategory;
-      activeCategory = this.id;
-      mainContainerEl.innerHTML = "";
-      FAQuestions(activeCategory)
-
-      if(oldActiveCategory!==activeCategory){
-        document.getElementById(activeCategory).classList.add("activeTag")
-        document.getElementById(oldActiveCategory).classList.remove("activeTag")
-      }
-
-      
-    });
-  });
-
-  mainContainerEl.addEventListener("click", function(event) {
-    const clickedElement = event.target;
-    const card = clickedElement.closest(".card");
+tags.forEach(function(tag) {
+  tag.addEventListener("click", function() {
     
-    if (card) {
-      // Toggle the "Queactive" class for the clicked card
-      card.classList.toggle("Queactive");
-      
-      // Close other cards if necessary
-      const allCont = mainContainerEl.querySelectorAll(".card");
-      allCont.forEach((item) => {
-        if (item !== card) {
-          item.classList.remove("Queactive");
-        }
-      });
+    var oldActiveCategory = activeCategory;
+    activeCategory = this.id;
+    mainContainerEl.innerHTML = "";
+    FAQuestions(activeCategory)
+
+    if(oldActiveCategory!==activeCategory){
+      document.getElementById(activeCategory).classList.add("activeTag")
+      document.getElementById(oldActiveCategory).classList.remove("activeTag")
     }
+
+    
   });
+});
+
+mainContainerEl.addEventListener("click", function(event) {
+  const clickedElement = event.target;
+  const card = clickedElement.closest(".card");
   
+  if (card) {
+    // Toggle the "Queactive" class for the clicked card
+    card.classList.toggle("Queactive");
+    
+    // Close other cards if necessary
+    const allCont = mainContainerEl.querySelectorAll(".card");
+    allCont.forEach((item) => {
+      if (item !== card) {
+        item.classList.remove("Queactive");
+      }
+    });
+  }
+});
 
 // Function to search and display results
 function searchFAQ(query) {
@@ -453,9 +453,16 @@ function searchFAQ(query) {
 }
 
 // Event listener for search input changes
-
 searchInput.addEventListener("input", function () {
   const query = this.value;
-  document.getElementById("categories").innerHTML = '<li class="tags activeTag" id="result">Result</li>';
-  searchFAQ(query);
+  if (query.length==0) {
+    document.getElementById("categories").innerHTML = oldData;
+    document.getElementById("searchTerm").innerText = "";
+  } else {
+    document.getElementById("searchTerm").innerText = "Looking for "+query;
+    document.getElementById("categories").innerHTML = '<li class="tags activeTag" id="result">Result</li>';
+    searchFAQ(query);
+  }
 });
+
+FAQuestions(activeCategory);

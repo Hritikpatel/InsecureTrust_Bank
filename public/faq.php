@@ -33,11 +33,11 @@
                 <input type="text" name="search" id="searchbar" placeholder="Search your question..." title="Enter your question..." required>
                 <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #191919;"></i></button>
             </form>
-            <span id="searchTerm">
+            <span id="searchTerm" class="searchTerm">
                 <?php
                     if( array_key_exists( "search", $_GET ) && $_GET[ 'search' ] != NULL ) {
                         // Feedback for end user
-                        $hl = '<pre>Looking for ' . $_GET[ 'search' ] . '</pre>';
+                        $hl = '<pre> Looking for ' . $_GET[ 'search' ] . '</pre>';
                         echo $hl; 
                     }
                 ?>

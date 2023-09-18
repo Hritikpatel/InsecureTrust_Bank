@@ -226,4 +226,7 @@ a{
   .questionCont .card.Queactive .arrowCont {
     transform: rotate(-180deg);
   }
-  
+  .searchTerm{
+    color: var(--White);
+    font-size: 18px;
+  }
