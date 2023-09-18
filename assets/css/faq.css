@@ -186,12 +186,14 @@ a{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    padding: 7px;
+    padding: 2px;
     -webkit-user-select: none;
     user-select: none;
+    height: 50px;
+    width: 50px;
     transition: 0.5s ease transform;
   }
-  .questionCont .card .arrowCont img {
+  .questionCont .card .arrowCont i {
     margin-top: 3px;
   }
   .questionCont .card .arrowCont:hover {
@@ -206,14 +208,14 @@ a{
     color: hsl(240, 6%, 50%);
     line-height: 17px;
   }
-  .questionCont .card.active .questionpara p {
+  .questionCont .card .Queactive .questionpara p {
     color: #000;
   }
-  .questionCont .card.active .answer {
+  .questionCont .card .Queactive .answer {
     height: auto;
     max-height: 700px;
   }
-  .questionCont .card.active .arrowCont {
+  .questionCont .card .Queactive .arrowCont {
     transform: rotate(-180deg);
   }
   

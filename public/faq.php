@@ -29,11 +29,19 @@
         <section class="top">
             <span class="sub">FAQ</span>
             <span class="heading">Have any questions?</span>
-            <form class="searchBarForm" id="form">
-                <input type="text" name="search" id="searchbar" placeholder="Search your question..." required>
+            <form class="searchBarForm" id="form" method="GET" action = "#">
+                <input type="text" name="search" id="searchbar" placeholder="Search your question..." title="Enter your question..." required>
                 <button type="submit" id="searchBtn"><i class="fa-solid fa-magnifying-glass fa-xl" style="color: #191919;"></i></button>
             </form>
-            <span id="searchTerm"></span>
+            <span id="searchTerm">
+                <?php
+                    if( array_key_exists( "search", $_GET ) && $_GET[ 'search' ] != NULL ) {
+                        // Feedback for end user
+                        $hl = '<pre>Looking for ' . $_GET[ 'search' ] . '</pre>';
+                        echo $hl; 
+                    }
+                ?>
+            </span>
         </section>
         <ul class="categories">
             <li class="tags activeTag" id="account">Account</li>
@@ -48,4 +56,5 @@
         </section>
     </div>
 </body>
+
 </html>

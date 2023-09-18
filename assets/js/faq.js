@@ -1,7 +1,7 @@
 
 const FAQ = [
   {
-    question: "How many team members can I invite ?",
+    question: "Q1: How do I open a bank account?",
     answer:
       `To open a bank account with us, follow these steps:
 
@@ -56,9 +56,12 @@ function createHTMLElements(question, answer) {
   questionPara.appendChild(questionEl);
   questionEl.innerHTML = question;
   const arrowCont = document.createElement("div");
-  const arrowImg = document.createElement("img");
-  arrowImg.src =
-    "https://raw.githubusercontent.com/Dinesh1042/FAQ-Cards/f691e8334fd253cfe843ab983e070294cd880b10/images/icon-arrow-down.svg";
+  const arrowImg = document.createElement("i");
+  arrowImg.classList.add("fa-solid");
+  arrowImg.classList.add("fa-angle-down");
+  arrowImg.classList.add("fa-xl");
+  arrowImg.style.color = "#ffffff";
+
   arrowCont.classList.add("arrowCont");
   arrowCont.appendChild(arrowImg);
   questionCont.appendChild(arrowCont);
@@ -88,20 +91,22 @@ allCont.forEach((e) => {
   btn.addEventListener("click", (pos) => {
     allCont.forEach((item) => {
       if (item !== e) {
-        item.classList.remove("active");
+        item.classList.remove("Queactive");
       }
     });
-    e.classList.toggle("active");
+    e.classList.toggle("Queactive");
   });
 });
 
 
 document.getElementById("form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent the default form submission behavior
+  // event.preventDefault(); // Prevent the default form submission behavior
 
+  var searchbar = document.getElementById("searchbar");
+  var searchTerm = document.getElementById("searchTerm");
   // Get form data
-  var formData = document.getElementById("searchbar").text;
-  console.log(formData);
-  alert(formData);
-  // document.getElementById("searchTerm").textContent= 
+  var formData = searchbar.value;
+  // console.log(formData);
+  // alert(formData);
+  searchTerm.innerText = formData;
 });
