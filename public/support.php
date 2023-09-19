@@ -25,9 +25,9 @@
         </ul>
         <?php
         if ("login" == "lgin"){
-           echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+           echo '<a href="login.php"><button type="button" class="btn">Login</button></a>';
         }else{
-           echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+           echo '<a href="login.php"><button type="button" class="btn">Logout</button></a>';
         }
         ?>
     </nav>
