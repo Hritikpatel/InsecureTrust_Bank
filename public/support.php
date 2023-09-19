@@ -32,50 +32,51 @@
         ?>
     </nav>
     <div class="body">
-    <form id="support-form" action="submit_support_request.php" method="post">
-        <!-- Contact Information Section -->
-        <div class="form-section">
-            <h2>Contact Information</h2>
-            <div class="form-group">
-                <label for="full-name">Full Name:</label>
-                <input type="text" id="full-name" name="full_name" required>
+        <form id="support-form" action="submit_support_request.php" method="post">
+            <h1>Register you query here</h1>
+            <!-- Contact Information Section -->
+            <div class="form-section">
+                <h2>Contact Information</h2>
+                <div class="form-group">
+                    <label for="full-name">Full Name:</label>
+                    <input type="text" id="full-name" name="full_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone">
-            </div>
-        </div>
 
-        <!-- Query or Complaint Section -->
-        <div class="form-section">
-            <h2>Query or Complaint</h2>
-            <div class="form-group">
-                <label for="category">Category:</label>
-                <select id="category" name="category" required>
-                    <option value="" disabled selected>Select Category</option>
-                    <option value="Account Issues">Account Issues</option>
-                    <option value="Technical Support">Technical Support</option>
-                    <option value="Billing Inquiries">Billing Inquiries</option>
-                    <!-- Add more categories as needed -->
-                </select>
+            <!-- Query or Complaint Section -->
+            <div class="form-section">
+                <h2>Query or Complaint</h2>
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="" disabled selected>Select Category</option>
+                        <option value="Account Issues">Account Issues</option>
+                        <option value="Technical Support">Technical Support</option>
+                        <option value="Billing Inquiries">Billing Inquiries</option>
+                        <!-- Add more categories as needed -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" rows="4" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="attachments">Attachments (if applicable):</label>
+                    <input type="file" id="attachments" name="attachments">
+                </div>
             </div>
-            <div class="form-group">
-                <label for="description">Description:</label>
-                <textarea id="description" name="description" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="attachments">Attachments (if applicable):</label>
-                <input type="file" id="attachments" name="attachments">
-            </div>
-        </div>
 
-        <!-- Submit Button -->
-        <button type="submit">Submit</button>
-    </form>
+            <!-- Submit Button -->
+            <button type="submit">Submit</button>
+        </form>
 
     </div>
 </body>
