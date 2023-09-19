@@ -32,7 +32,7 @@
         ?>
     </nav>
     <div class="body">
-        <form id="support-form" action="../assets/php_process/support_request.php" method="post" enctype="multipart/form-data">
+        <form id="support-form" action="../assets/php_process/support_request.php" enctype="multipart/form-data" method="post" >
             <h1>Register you query here</h1>
             <!-- Contact Information Section -->
             <div class="form-section">
@@ -70,7 +70,7 @@
                 </div>
                 <div class="form-group">
                     <label for="attachments">Attachments (if applicable):</label>
-                    <input type="file" id="attachments" name="attachments" multiple>
+                    <input type="file" id="attachments" name="attachments[]" multiple>
                 </div>
             </div>
 
