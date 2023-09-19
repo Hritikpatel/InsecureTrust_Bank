@@ -54,6 +54,10 @@
             <div class="questionCont" id="mainContainer">
             </div>
         </section>
+        <section class="footer">
+            <Span>Not able to solve issue? </Span>
+            <a href="support.php"><button class="Supbtn">Get Support</button></a>
+        </section>
     </div>
 </body>
 

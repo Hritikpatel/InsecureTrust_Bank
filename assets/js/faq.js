@@ -307,7 +307,15 @@ var activeCategory = "account";
 var tags = document.querySelectorAll(".tags");
 const searchInput = document.getElementById("searchbar");
 var oldData = document.getElementById("categories").innerHTML;
+const searchTerm = document.getElementById("searchTerm");
 
+// console.log(searchTerm.innerText);
+var query = searchTerm.innerText.replace("Looking for ", "");
+if (searchTerm.innerText.length > 0){
+  console.log(query);
+  document.getElementById("categories").innerHTML = '<li class="tags activeTag" id="result">Result</li>';
+    searchFAQ(query);
+}
 
 // Function to display tab related questions
 function FAQuestions(activeCategory) {
@@ -381,11 +389,12 @@ document.getElementById("form").addEventListener("submit", function(event) {
   // event.preventDefault(); // Prevent the default form submission behavior
   
   var searchbar = document.getElementById("searchbar");
-  var searchTerm = document.getElementById("searchTerm");
   // Get form data
   var formData = searchbar.value;
   // searchTerm.innerText = formData
   document.getElementById("categories").innerHTML = '<li class="tags activeTag" id="result">Result</li>';
+  searchFAQ(formData);
+
 });
 
 tags.forEach(function(tag) {
@@ -425,7 +434,6 @@ mainContainerEl.addEventListener("click", function(event) {
 
 // Function to search and display results
 function searchFAQ(query) {
-  const searchResultsContainer = document.getElementById("searchResults");
   mainContainerEl.innerHTML = ""; // Clear previous results
 
   // Combine all FAQ arrays into one array for searching
@@ -444,7 +452,7 @@ function searchFAQ(query) {
 
   // Display matching results
   if (matchingFAQs.length === 0) {
-    searchResultsContainer.innerHTML = "No matching results found.";
+    mainContainerEl.innerHTML = "No matching results found.";
   } else {
     matchingFAQs.forEach((faq) => {
       createHTMLElements(faq.question, faq.answer)
@@ -455,7 +463,7 @@ function searchFAQ(query) {
 // Event listener for search input changes
 searchInput.addEventListener("input", function () {
   const query = this.value;
-  if (query.length==0) {
+  if (query.length===0) {
     document.getElementById("categories").innerHTML = oldData;
     document.getElementById("searchTerm").innerText = "";
   } else {

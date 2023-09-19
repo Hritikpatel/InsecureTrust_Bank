@@ -18,7 +18,6 @@
     align-items: normal;
     align-content: normal;
 }
-
 .logo{
     font-weight: 900;
     font-size: 32px;
@@ -65,9 +64,8 @@ a{
     background-color: var(--active-color);
     color: var(--White);
 }
-
 .body{
-    height: 1000svh;
+    /* height: 1000svh; */
     margin-inline: 10px;
     background-color: rgb(25, 25, 25);
     border-radius: 20px 20px 0 0;
@@ -99,6 +97,7 @@ a{
     height: 50px;
     border-radius: 500px;
     overflow: hidden;
+    margin-bottom: 20px;
 }
 #searchbar, #searchbar:focus{
     width: 86.8%;
@@ -125,6 +124,7 @@ a{
     align-content: stretch;
     list-style-type: none;
     color: var(--White);
+    margin-top: 20px;
 }
 .tags{
     margin-inline: 50px;
@@ -160,35 +160,35 @@ a{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-  }
-  .questionCont h1 {
+}
+.questionCont h1 {
     font-size: 28px;
     text-align: center;
     font-weight: 700;
     margin-bottom: 15px;
-  }
-  .questionCont .card {
+}
+.questionCont .card {
     width: 85%;
     transition: 3s ease all;
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  }
-  .questionCont .card .question {
+}
+.questionCont .card .question {
     display: flex;
     justify-content: space-between;
     padding: 15px 5px;
     align-items: center;
-  }
-  .questionCont .questionpara p {
+}
+.questionCont .questionpara p {
     font-weight: 700;
     color: hsl(240, 6%, 50%);
-  }
-  .answer {
+}
+.answer {
     max-height: 0;
   
     overflow: hidden;
     transition: 0.5s ease max-height;
-  }
-  .questionCont .card .arrowCont {
+}
+.questionCont .card .arrowCont {
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -200,33 +200,54 @@ a{
     height: 50px;
     width: 50px;
     transition: 0.5s ease transform;
-  }
-  .questionCont .card .arrowCont i {
+}
+.questionCont .card .arrowCont i {
     margin-top: 3px;
-  }
-  .questionCont .card .arrowCont:hover {
+}
+.questionCont .card .arrowCont:hover {
     background-color: hsla(240, 6%, 50%, 0.226);
-  }
-  .questionCont .card .arrowCont:active {
+}
+.questionCont .card .arrowCont:active {
     background-color: hsla(240, 6%, 50%, 0.514);
-  }
-  .answer .answerPara p {
+}
+.answer .answerPara p {
     padding: 15px 10px;
     padding-top: 0%;
     color: var(--White);
     line-height: 28px;
-  }
-  .questionCont .card.Queactive .questionpara p {
+}
+.questionCont .card.Queactive .questionpara p {
     color: var(--White);
-  }
-  .questionCont .card.Queactive .answer {
+}
+.questionCont .card.Queactive .answer {
     height: auto;
     max-height: 700px;
-  }
-  .questionCont .card.Queactive .arrowCont {
+}
+.questionCont .card.Queactive .arrowCont {
     transform: rotate(-180deg);
-  }
-  .searchTerm{
+}
+.searchTerm{
     color: var(--White);
     font-size: 18px;
-  }
+}
+.footer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  padding: 20px;
+  height: 5svh;
+  color: var(--White);
+  margin-top: 20px;
+}
+.Supbtn{
+  width: 150px;
+  padding-block: 10%;
+  color: var(--active-color);
+  border: none;
+  border-radius: 500px;
+  font-weight: 600;
+  cursor: pointer;
+}
