@@ -3,9 +3,9 @@
     padding: 0px;
     font-family: 'Poppins', sans-serif;
     --active-color: black;
-    --inactive-color: rgb(100, 100, 100);
+    --inactive-color: rgb(140, 140, 140);
     --White: white;
-    color: var(--White);
+    /* color: var(--White); */
 }
 *::-webkit-scrollbar{
     display: none;
@@ -33,13 +33,20 @@
     list-style-type: none;
     font-weight: 600;
 }
+a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--inactive-color);
+
+}
 .item{
     padding: 10px;
     padding-inline: 20px;
-    color: var(--inactive-color);
+    /* color: var(--inactive-color); */
     cursor: pointer;
 }
-.item:hover{
+.item:hover a{
     color: var(--active-color);
     font-weight: 700;
 }
@@ -48,12 +55,7 @@
     color: var(--active-color);
     border-radius: 10px;
 }
-a{
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
 
-}
 .btn{
     width: 150px;
     height: 95%;
@@ -73,4 +75,78 @@ a{
     margin-inline: 10px;
     background-color: rgb(25, 25, 25);
     border-radius: 20px 20px 0 0;
+}
+/* Style for the entire form */
+#support-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style for form sections */
+.form-section {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for section headings */
+.form-section h2 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+/* Style for form fields and labels */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group select,
+.form-group textarea,
+.form-group input[type="file"] {
+    width: 96%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.form-group select{
+    width: 100%;
+}
+.form-group textarea{
+    resize: vertical;
+}
+
+/* Style for the "Submit" button */
+button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3;
 }

@@ -29,13 +29,20 @@
     list-style-type: none;
     font-weight: 600;
 }
+a{
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--inactive-color);
+
+}
 .item{
     padding: 10px;
     padding-inline: 20px;
-    color: var(--inactive-color);
+    /* color: var(--inactive-color); */
     cursor: pointer;
 }
-.item:hover{
+.item:hover a{
     color: var(--active-color);
     font-weight: 700;
 }
@@ -43,12 +50,6 @@
     font-weight: 700;
     color: var(--active-color);
     border-radius: 10px;
-}
-a{
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-
 }
 .btn{
     width: 150px;

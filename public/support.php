@@ -17,13 +17,19 @@
             ITB
         </div>
         <ul class="list">
-            <li class="item">Home</li>
-            <li class="item">About Us</li>
-            <li class="item">Discover</li>
-            <li class="item active">Support</li>
-            <li class="item">FAQs</li>
+            <li class="item"><a href="">Home</a></li>
+            <li class="item"><a href="">About Us</a></li>
+            <li class="item"><a href="dashboard.php">Dashboard</a></li>
+            <li class="item"><a href="support.php" class="active">Support</a></li>
+            <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
-        <a href="login.php" ><button type="button" class="btn">Login</button></a>
+        <?php
+        if ("login" == "lgin"){
+           echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+        }else{
+           echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+        }
+        ?>
     </nav>
     <div class="body">
     <form id="support-form" action="submit_support_request.php" method="post">
@@ -68,11 +74,7 @@
         </div>
 
         <!-- Submit Button -->
-        <div class="form-section">
-            <div class="form-group">
-                <button type="submit">Submit</button>
-            </div>
-        </div>
+        <button type="submit">Submit</button>
     </form>
 
     </div>

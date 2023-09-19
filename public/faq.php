@@ -17,13 +17,19 @@
             ITB
         </div>
         <ul class="list">
-            <li class="item ">Home</li>
-            <li class="item ">About Us</li>
-            <li class="item ">Discover</li>
-            <li class="item ">Support</li>
-            <li class="item active">FAQs</li>
+            <li class="item"><a href="">Home</a></li>
+            <li class="item"><a href="">About Us</a></li>
+            <li class="item"><a href="dashboard.php">Dashboard</a></li>
+            <li class="item"><a href="support.php">Support</a></li>
+            <li class="item"><a href="faq.php" class="active">FAQs</a></li>
         </ul>
-        <a href="login.php" ><button type="button" class="btn">Login</button></a>
+        <?php
+        if ("login" == "lgin"){
+           echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+        }else{
+           echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+        }
+        ?>
     </nav>
     <div class="body">
         <section class="top">
