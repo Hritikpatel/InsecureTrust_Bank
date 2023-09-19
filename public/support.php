@@ -32,7 +32,7 @@
         ?>
     </nav>
     <div class="body">
-        <form id="support-form" action="submit_support_request.php" method="post">
+        <form id="support-form" action="../assets/php_process/support_request.php" method="post">
             <h1>Register you query here</h1>
             <!-- Contact Information Section -->
             <div class="form-section">
@@ -47,7 +47,7 @@
                 </div>
                 <div class="form-group">
                     <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
             </div>
 
@@ -70,12 +70,12 @@
                 </div>
                 <div class="form-group">
                     <label for="attachments">Attachments (if applicable):</label>
-                    <input type="file" id="attachments" name="attachments">
+                    <input type="file" id="attachments" name="attachments" multiple>
                 </div>
             </div>
 
             <!-- Submit Button -->
-            <button type="submit">Submit</button>
+            <button type="submit">Submit your query</button>
         </form>
 
     </div>

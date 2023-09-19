@@ -93,8 +93,13 @@ a{
     padding: 10px;
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#support-form h1 {
+    margin-left: 125px;
+    margin-bottom: 20px;
 }
 
 /* Style for section headings */
@@ -138,10 +143,10 @@ a{
 
 /* Style for the "Submit" button */
 button[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
+    background-color: var(--active-color);
+    color: var(--White);
     border: none;
-    border-radius: 5px;
+    border-radius: 500px;
     padding: 10px 20px;
     font-size: 16px;
     width: 100%;
@@ -149,5 +154,8 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: var(--White);
+    color: var(--active-color);
+    outline: 2px solid var(--active-color);
+
 }
