@@ -32,7 +32,7 @@
         ?>
     </nav>
     <div class="body">
-        <form id="support-form" action="../assets/php_process/support_request.php" method="post">
+        <form id="support-form" action="../assets/php_process/support_request.php" method="post" enctype="multipart/form-data">
             <h1>Register you query here</h1>
             <!-- Contact Information Section -->
             <div class="form-section">
