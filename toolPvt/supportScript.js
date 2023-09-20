@@ -1,8 +1,8 @@
 // Define the URL of the PHP file and parameters
 const phpFile = 'supportApi.php';
 const parameters = {
-  param1: 'value1',
-  param2: 'value2',
+  param1: 'value2',
+  param2: 'value1',
 };
 
 // Create a URLSearchParams object to encode the parameters

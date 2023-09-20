@@ -48,10 +48,6 @@
 
         $uploadedFiles = [];
 
-        echo "<pre>";
-        print_r($_FILES);
-        echo "</pre>";
-
         // Check if at least one file was uploaded
         if (!empty($_FILES["attachments"]["name"][0])) {
             foreach ($_FILES["attachments"]["error"] as $key => $error) {
@@ -79,7 +75,7 @@
 
         if ($stmt->execute()) {
             // Support request with file uploads successfully stored in the database
-            echo "Support request submitted successfully.";
+            header("Location: ../../public/support.php");
         } else {
             // An error occurred while storing the support request
             echo "Error: " . $sql . "<br>" . $conn->error;

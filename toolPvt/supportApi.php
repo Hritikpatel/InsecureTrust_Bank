@@ -34,19 +34,36 @@ if ($method === "POST") {
         echo "$ action==none or invalid action";
     }
 } else if($method === "GET"){
+
+    // $param1 = $_GET['param1'];
+    // $param2 = $_GET['param2'];
+
+    try {
+        // Database connection parameters
+        $host = 'localhost';
+        $dbname = 'itb';
+        $username = 'root';
+        $password = '';
     
-    $param1 = $_GET['param1'];
-    $param2 = $_GET['param2'];
+        // Create a new PDO instance
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    
+        // Prepare and execute the SQL query
+        $stmt = $pdo->prepare("SELECT * FROM support WHERE isActive IS TRUE");
+        $stmt->execute();
+    
+        // Fetch data from the database
+        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+        // Encode the data as JSON
+        $jsonResponse = json_encode($data);
+    } catch (PDOException $e) {
+        // Handle database connection errors
+        echo "Connection failed: " . $e->getMessage();
+    }
 
     // $action = 0;
-    $response = array(
-        'result' => 'success',
-        'message' => 'Parameters received successfully',
-        'data' => array(
-            'param1' => $param1,
-            'param2' => $param2
-        )
-    );
+    $response = $jsonResponse;
     
     // Send the response as JSON
     header('Content-Type: application/json');
