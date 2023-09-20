@@ -11,6 +11,7 @@
     <div class="container">
         <h2>Login</h2>
         <form action="supportApi.php" method="POST">
+            <input type="hidden" name="action" value="supportLogin">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" required>
             <br>
