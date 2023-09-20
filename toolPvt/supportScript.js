@@ -29,7 +29,7 @@ function getAll() {
     });
 }
 
-function getUser() {
+function getUser(number) {
 
     var parameters = {
         for: 'accData',
