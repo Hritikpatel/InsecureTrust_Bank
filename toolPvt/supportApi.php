@@ -33,41 +33,58 @@ if ($method === "POST") {
     }else {
         echo "$ action==none or invalid action";
     }
-} else if($method === "GET"){
+} elseif($method === "GET"){
 
-    // $param1 = $_GET['param1'];
-    // $param2 = $_GET['param2'];
+    // Database connection parameters
+    $host = 'localhost';
+    $dbname = 'itb';
+    $username = 'root';
+    $password = '';
 
-    try {
-        // Database connection parameters
-        $host = 'localhost';
-        $dbname = 'itb';
-        $username = 'root';
-        $password = '';
-    
-        // Create a new PDO instance
-        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
-    
-        // Prepare and execute the SQL query
-        $stmt = $pdo->prepare("SELECT * FROM support WHERE isActive IS TRUE");
-        $stmt->execute();
-    
-        // Fetch data from the database
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    
-        // Encode the data as JSON
-        $jsonResponse = json_encode($data);
-    } catch (PDOException $e) {
-        // Handle database connection errors
-        echo "Connection failed: " . $e->getMessage();
+    // Create a new PDO instance
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+
+
+    $for = $_GET['for'];
+    if($for === "allData"){
+        try {
+            // Prepare and execute the SQL query
+            $stmt = $pdo->prepare("SELECT * FROM support WHERE isActive IS TRUE");
+            $stmt->execute();
+        
+            // Fetch data from the database
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            // Encode the data as JSON
+            $response = json_encode($data);
+        } catch (PDOException $e) {
+            // Handle database connection errors
+            echo "Connection failed: " . $e->getMessage();
+        }
+
+        
+    }elseif ($for === "accData") {
+        $number = $_GET["number"];
+        try {
+            // Prepare and execute the SQL query
+            $stmt = $pdo->prepare("SELECT * FROM accounts WHERE number == $number");
+            $stmt->execute();
+        
+            // Fetch data from the database
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+            // Encode the data as JSON
+            $response = json_encode($data);
+        } catch (PDOException $e) {
+            // Handle database connection errors
+            echo "Connection failed: " . $e->getMessage();
+        }
     }
 
-    // $action = 0;
-    $response = $jsonResponse;
-    
     // Send the response as JSON
     header('Content-Type: application/json');
     echo json_encode($response);
+
 }else{
     // Handle unauthorized access or other HTTP methods
     header("HTTP/1.1 401 Unauthorized");
