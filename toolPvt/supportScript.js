@@ -20,8 +20,9 @@ function getAll() {
         return response.json(); // If the response is JSON
     })
     .then(data => {
-        // Handle the response data here
-        console.log(data);
+        data.forEach(element => {
+            console.log(element.full_name);
+        });
     })
     .catch(error => {
         // Handle errors here

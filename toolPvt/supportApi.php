@@ -72,7 +72,7 @@ if ($method === "POST") {
         
             // Fetch data from the database
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
+            
             // Encode the data as JSON
             $response = json_encode($data);
         } catch (PDOException $e) {
@@ -83,7 +83,7 @@ if ($method === "POST") {
 
     // Send the response as JSON
     header('Content-Type: application/json');
-    echo json_encode($response);
+    echo $response;
 
 }else{
     // Handle unauthorized access or other HTTP methods
