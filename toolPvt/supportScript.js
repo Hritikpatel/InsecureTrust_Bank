@@ -1,5 +1,6 @@
 // Define the URL of the PHP file and parameters
 const phpFile = 'supportApi.php';
+const cardholder = document.getElementById("card");
 function getAll() {
     var parameters = {
     for: 'allData'
@@ -21,7 +22,8 @@ function getAll() {
     })
     .then(data => {
         data.forEach(element => {
-            console.log(element);
+            // cardholder.innerHTML = element.description;
+            // console.log(element);
         });
     })
     .catch(error => {

@@ -30,11 +30,20 @@
         ?>
     </nav>
     <div class="body">
+    <div class="container">
+        <div class="cardholder" id="cardholder">
+            <div class="card">
+                <span class="tag orange">Technical Support</span>
+                <span id="card" onmouseover="window.location ='./try.php' ">description: "Test"</span>
+                <!-- <script>alert("Works")</script> -->
+            </div>
+        </div>
+        <div class="info"></div>
+        </div>
         <span class="tag orange">Technical Support</span>
         <span class="tag blue">Billing Inquiries</span>
         <span class="tag green">Account Issues</span>
         <span># TZN1WOWJ</span>
-
         <a href="">
             <div class="file">
                 <i class="fa-solid fa-file" style="color: #0f0f0f;" title="Hello"></i>

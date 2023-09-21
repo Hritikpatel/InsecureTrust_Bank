@@ -97,3 +97,27 @@ a{
     color: green;
     border-color: green;
 }
+.container{  
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "cardholder info";
+}  
+.cardholder{ 
+    grid-area: cardholder; 
+}
+  
+.info{
+    grid-area: info;
+}
+.cardholder{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}

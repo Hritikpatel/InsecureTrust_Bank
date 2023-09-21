@@ -76,6 +76,7 @@
         if ($stmt->execute()) {
             // Support request with file uploads successfully stored in the database
             header("Location: ../../public/support.php");
+            echo "Submitted. ITB support team will contact you via email and phone.";
         } else {
             // An error occurred while storing the support request
             echo "Error: " . $sql . "<br>" . $conn->error;
