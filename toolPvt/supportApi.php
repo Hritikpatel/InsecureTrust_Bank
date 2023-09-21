@@ -49,7 +49,7 @@ if ($method === "POST") {
     if($for === "allData"){
         try {
             // Prepare and execute the SQL query
-            $stmt = $pdo->prepare("SELECT * FROM support WHERE isActive IS TRUE");
+            $stmt = $pdo->prepare("SELECT full_name, email, description, category, attachments, phone, tkt_no FROM support WHERE isActive IS TRUE");
             $stmt->execute();
         
             // Fetch data from the database

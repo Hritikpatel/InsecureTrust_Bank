@@ -21,7 +21,7 @@ function getAll() {
     })
     .then(data => {
         data.forEach(element => {
-            console.log(element.full_name);
+            console.log(element);
         });
     })
     .catch(error => {
