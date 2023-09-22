@@ -39,7 +39,7 @@
         $ticketNumber = generateRandomTicketNumber();
 
 
-        // 
+        // TODO part FIX
         $allowedFormats = array(
             "image/jpeg", "image/png", "image/gif",
             "video/mp4", "video/webm", "video/ogg",
