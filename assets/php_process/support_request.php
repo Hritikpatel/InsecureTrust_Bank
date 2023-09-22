@@ -40,12 +40,13 @@
 
         $categoryArray = array("Account Issues", "Technical Support", "Billing Inquiries");
 
-        // Check if $categoryNumber is within bounds
+        
         if ($categoryNumber >= 0 && $categoryNumber < count($categoryArray)) {
             $category = $categoryArray[$categoryNumber];
         } else {
             // Handle the case where $categoryNumber is out of bounds
             $category = "Invalid Category";
+            echo "Invalid Category";
         }
 
 
@@ -82,66 +83,65 @@
                     
                     // TODO Problem
                     // Move the uploaded file to the target directory
-                    if (move_uploaded_file($tempName, $targetPath)) {
-                        $uploadedFiles[] = $targetPath;
-                    }
-                    // Prepare and execute the SQL query to insert the support request into the database
-                    $sql = "INSERT INTO support (full_name, email, phone, category, description, attachments, tkt_no) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?)";
+                    // if (move_uploaded_file($tempName, $targetPath)) {
+                    //     $uploadedFiles[] = $targetPath;
+                    // }
+                    // // Prepare and execute the SQL query to insert the support request into the database
+                    // $sql = "INSERT INTO support (full_name, email, phone, category, description, attachments, tkt_no) 
+                    // VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-                    $stmt = $conn->prepare($sql);
-                    $serializedFiles = serialize($uploadedFiles); // Serialize the uploaded file paths
-                    $stmt->bind_param("sssssss", $full_name, $email, $phone, $category, $description, $serializedFiles, $ticketNumber);
+                    // $stmt = $conn->prepare($sql);
+                    // $serializedFiles = serialize($uploadedFiles); // Serialize the uploaded file paths
+                    // $stmt->bind_param("sssssss", $full_name, $email, $phone, $category, $description, $serializedFiles, $ticketNumber);
 
-                    if ($stmt->execute()) {
-                        // Support request with file uploads successfully stored in the database
-                        header("Location: ../../public/support.php");
-                        echo "Submitted. ITB support team will contact you via email and phone.";
-                    } else {
-                        // An error occurred while storing the support request
-                        echo "Error: " . $sql . "<br>" . $conn->error;
-                    }
-
-                    // Close the database connection
-                    $stmt->close();
-                    $conn->close();
-
-
-                    // // TODO FIX
-                    // // Check if the file format is in the list of allowed formats
-                    // $fileType = $_FILES["attachments"]["type"][$key];
-                    // if (in_array($fileType, $allowedFormats)) {
-                    //     // Move the uploaded file to the target directory
-                    //     if (move_uploaded_file($tempName, $targetPath)) {
-                    //         $uploadedFiles[] = $targetPath;
-
-                    //         // Prepare and execute the SQL query to insert the support request into the database
-                    //         $sql = "INSERT INTO support (full_name, email, phone, category, description, attachments, tkt_no) 
-                    //         VALUES (?, ?, ?, ?, ?, ?, ?)";
-
-                    //         $stmt = $conn->prepare($sql);
-                    //         $serializedFiles = serialize($uploadedFiles); // Serialize the uploaded file paths
-                    //         $stmt->bind_param("sssssss", $full_name, $email, $phone, $category, $description, $serializedFiles, $ticketNumber);
-
-                    //         if ($stmt->execute()) {
-                    //             // Support request with file uploads successfully stored in the database
-                    //             header("Location: ../../public/support.php");
-                    //             echo "Submitted. ITB support team will contact you via email and phone.";
-                    //         } else {
-                    //             // An error occurred while storing the support request
-                    //             echo "Error: " . $sql . "<br>" . $conn->error;
-                    //         }
-
-                    //         // Close the database connection
-                    //         $stmt->close();
-                    //         $conn->close();
-
-                        // }
+                    // if ($stmt->execute()) {
+                    //     // Support request with file uploads successfully stored in the database
+                    //     header("Location: ../../public/support.php");
+                    //     echo "Submitted. ITB support team will contact you via email and phone.";
                     // } else {
-                    //     // File format is not allowed
-                    //     echo "File format not allowed for file: " . $fileName;
+                    //     // An error occurred while storing the support request
+                    //     echo "Error: " . $sql . "<br>" . $conn->error;
                     // }
 
+                    // // Close the database connection
+                    // $stmt->close();
+                    // $conn->close();
+
+
+                    // TODO FIX
+                    // Check if the file format is in the list of allowed formats
+                    $fileType = $_FILES["attachments"]["type"][$key];
+                    if (in_array($fileType, $allowedFormats)) {
+                        // Move the uploaded file to the target directory
+                        if (move_uploaded_file($tempName, $targetPath)) {
+                            $uploadedFiles[] = $targetPath;
+
+                            // Prepare and execute the SQL query to insert the support request into the database
+                            $sql = "INSERT INTO support (full_name, email, phone, category, description, attachments, tkt_no) 
+                            VALUES (?, ?, ?, ?, ?, ?, ?)";
+
+                            $stmt = $conn->prepare($sql);
+                            $serializedFiles = serialize($uploadedFiles); // Serialize the uploaded file paths
+                            $stmt->bind_param("sssssss", $full_name, $email, $phone, $category, $description, $serializedFiles, $ticketNumber);
+
+                            if ($stmt->execute()) {
+                                // Support request with file uploads successfully stored in the database
+                                header("Location: ../../public/support.php");
+                                echo "Submitted. ITB support team will contact you via email and phone.";
+                            } else {
+                                // An error occurred while storing the support request
+                                echo "Error: " . $sql . "<br>" . $conn->error;
+                            }
+
+                            // Close the database connection
+                            $stmt->close();
+                            $conn->close();
+
+                        }
+                    } else {
+                        // File format is not allowed
+                        echo "File format not allowed for file: " . $fileName;
+                    }
                 }
             }
         }else {
