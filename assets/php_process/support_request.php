@@ -55,11 +55,27 @@
                     $tempName = $_FILES["attachments"]["tmp_name"][$key];
                     $fileName = basename($_FILES["attachments"]["name"][$key]);
                     $targetPath = $uploadDirectory . $fileName ;
-
+                    
+                    // TODO Problem
                     // Move the uploaded file to the target directory
                     if (move_uploaded_file($tempName, $targetPath)) {
                         $uploadedFiles[] = $targetPath;
                     }
+
+                    
+                    // TODO FIX
+                    // Check if the file format is in the list of allowed formats
+                    $fileType = $_FILES["attachments"]["type"][$key];
+                    if (in_array($fileType, $allowedFormats)) {
+                        // Move the uploaded file to the target directory
+                        if (move_uploaded_file($tempName, $targetPath)) {
+                            $uploadedFiles[] = $targetPath;
+                        }
+                    } else {
+                        // File format is not allowed
+                        echo "File format not allowed for file: " . $fileName;
+                    }
+
                 }
             }
         }
