@@ -28,10 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $stmt->execute();
     // $result = $stmt->get_result();
 
+    // TODO remove this to fix it.
     $sql = "SELECT * FROM logininfo WHERE username = '$entered_username' AND password_hash = '$entered_password'"; // password = No' OR '1'='1 
-    // echo $sql;
-
-    // Execute the query
     $result = mysqli_query($conn, $sql);
 
 

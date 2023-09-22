@@ -24,10 +24,10 @@
             <li class="item"><a href="faq.php" class="active">FAQs</a></li>
         </ul>
         <?php
-        if ("login" == "lgin"){
-           echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+        if (isset($_SESSION['user_id'])){
+            echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
         }else{
-           echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+            echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
         }
         ?>
     </nav>
@@ -42,9 +42,21 @@
             <span id="searchTerm" class="searchTerm">
                 <?php
                     if( array_key_exists( "search", $_GET ) && $_GET[ 'search' ] != NULL ) {
-                        // Feedback for end user
-                        $hl = '<pre> Looking for ' . $_GET[ 'search' ] . '</pre>';
-                        echo $hl; 
+
+                        // TODO Problem 
+                        $searchQuery = $_GET[ 'search' ];
+                        
+                        // TODO FIX
+                        // $searchQuery = $_GET["search"];
+                        // $searchQuery = strtolower($searchQuery);
+
+                        // while ((strpos($searchQuery,"script"))) {
+                        //     $searchQuery = str_replace("script","!!!",$searchQuery);
+                        // }
+
+                        // Output
+                        $out = '<pre> Looking for ' . $searchQuery . '</pre>';
+                        echo $out;
                     }
                 ?>
             </span>
