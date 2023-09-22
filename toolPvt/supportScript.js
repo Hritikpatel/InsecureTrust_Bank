@@ -22,7 +22,7 @@ function getAll() {
     })
     .then(data => {
         data.forEach(element => {
-            // cardholder.innerHTML = element.description;
+            cardholder.innerHTML = element.description;
             // console.log(element);
         });
     })

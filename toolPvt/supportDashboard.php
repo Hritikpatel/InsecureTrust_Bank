@@ -34,7 +34,7 @@
         <div class="cardholder" id="cardholder">
             <div class="card">
                 <span class="tag orange">Technical Support</span>
-                <span id="card" onmouseover="window.location ='./try.php' ">description: "Test"</span>
+                <span id="card">description: "Test"</span>
                 <!-- <script>alert("Works")</script> -->
             </div>
         </div>

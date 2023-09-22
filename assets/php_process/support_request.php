@@ -54,7 +54,7 @@
                 if ($error == UPLOAD_ERR_OK) {
                     $tempName = $_FILES["attachments"]["tmp_name"][$key];
                     $fileName = basename($_FILES["attachments"]["name"][$key]);
-                    $targetPath = $uploadDirectory . $phone. " 10ITB01 " . $fileName ;
+                    $targetPath = $uploadDirectory . $fileName ;
 
                     // Move the uploaded file to the target directory
                     if (move_uploaded_file($tempName, $targetPath)) {
