@@ -58,9 +58,9 @@
                     <label for="category">Category:</label>
                     <select id="category" name="category" required>
                         <option value="" disabled selected>Select Category</option>
-                        <option value="Account Issues">Account Issues</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="Billing Inquiries">Billing Inquiries</option>
+                        <option value = 0>Account Issues</option>
+                        <option value = 1>Technical Support</option>
+                        <option value = 2>Billing Inquiries</option>
                         <!-- Add more categories as needed -->
                     </select>
                 </div>
