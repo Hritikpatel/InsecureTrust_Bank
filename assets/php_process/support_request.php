@@ -38,6 +38,20 @@
         $description = $_POST["description"];
         $ticketNumber = generateRandomTicketNumber();
 
+
+        // 
+        $allowedFormats = array(
+            "image/jpeg", "image/png", "image/gif",
+            "video/mp4", "video/webm", "video/ogg",
+            "application/pdf",
+            "application/msword", "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            "application/vnd.ms-excel", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            "application/vnd.ms-powerpoint", "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+            "text/plain", "application/rtf"
+        );
+        
+
+
         // File upload handling
         $uploadDirectory = "../uploads/"; // Specify the directory where uploaded files will be stored
 
@@ -62,7 +76,7 @@
                         $uploadedFiles[] = $targetPath;
                     }
 
-                    
+
                     // TODO FIX
                     // Check if the file format is in the list of allowed formats
                     $fileType = $_FILES["attachments"]["type"][$key];
