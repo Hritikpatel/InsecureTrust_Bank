@@ -70,11 +70,11 @@
                     $fileName = basename($_FILES["attachments"]["name"][$key]);
                     $targetPath = $uploadDirectory . $fileName ;
                     
-                    // TODO Problem
-                    // Move the uploaded file to the target directory
-                    if (move_uploaded_file($tempName, $targetPath)) {
-                        $uploadedFiles[] = $targetPath;
-                    }
+                    // // TODO Problem
+                    // // Move the uploaded file to the target directory
+                    // if (move_uploaded_file($tempName, $targetPath)) {
+                    //     $uploadedFiles[] = $targetPath;
+                    // }
 
 
                     // TODO FIX
