@@ -37,7 +37,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION["authenticated"] = true;
         $_SESSION['user_id'] = $entered_username;
-        header("Location: ../../public/dashboard.php");
+        echo $_SESSION['user_id'];
+        // header("Location: ../../public/dashboard.php");
     } else {
         // Authentication failed
         $_SESSION["error"] = "Invalid username or password.";
