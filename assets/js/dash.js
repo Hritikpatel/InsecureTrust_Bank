@@ -9,7 +9,7 @@ if (userID) {
         method: 'GET',
         success: function(response) {
             var userData = response;
-            // Now you can use 'userData' in your JavaScript code
+
             console.log(userData);
         },
         error: function() {
