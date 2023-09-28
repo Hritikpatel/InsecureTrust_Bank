@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $stmt->bind_param("ss", $entered_username, $entered_password);
     // $stmt->execute();
     // $result = $stmt->get_result();
+    // $stmt->close();
+    // $conn->close();
 
     // TODO remove this to fix it.
     $sql = "SELECT * FROM logininfo WHERE username = '$entered_username' AND password_hash = '$entered_password'"; // password = No' OR '1'='1 
@@ -37,16 +39,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION["authenticated"] = true;
         $_SESSION['user_id'] = $entered_username;
-        echo $_SESSION['user_id'];
-        // header("Location: ../../public/dashboard.php");
+        // echo $_SESSION['user_id'];
+        header("Location: ../../public/dashboard.php");
     } else {
         // Authentication failed
         $_SESSION["error"] = "Invalid username or password.";
         header("Location: ../../public/login.php");
     }
 
-    $stmt->close();
-    $conn->close();
 } else {
     // Handle unauthorized access or other HTTP methods
     header("HTTP/1.1 401 Unauthorized");

@@ -24,11 +24,12 @@
             <li class="item"><a href="faq.php" class="active">FAQs</a></li>
         </ul>
         <?php
-        if (isset($_SESSION['user_id'])){
-            echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
-        }else{
-            echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
-        }
+            session_start();
+            if (isset($_SESSION['user_id'])){
+                echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+            }else{
+                echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+            }
         ?>
     </nav>
     <div class="body">

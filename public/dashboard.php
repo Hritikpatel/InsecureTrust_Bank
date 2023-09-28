@@ -22,6 +22,7 @@
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
         <?php
+        session_start();
         if (isset($_SESSION['user_id'])){
             echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
         }else{
@@ -34,17 +35,15 @@
     </div>
 
     <?php
-    session_start();
-
-    // Check if the user ID is set in the session
-    if (isset($_SESSION['user_id'])) {
-        // Retrieve the user ID
-        $user_id = $_SESSION['user_id'];
-        setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
-    } else {
-        // redirect to the login page
-        header("Location: login.php");
-    }
+        if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
+            // Redirect the user to the login page if not authenticated
+            header("Location: login.php");
+            exit();
+        } else {
+            // Retrieve the user ID
+            $user_id = $_SESSION['user_id'];
+            setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
+        }
     ?>
 </body>
 </html>
