@@ -9,7 +9,6 @@ if (userID) {
         method: 'GET',
         success: function(response) {
             var userData = response;
-
             console.log(userData);
         },
         error: function() {

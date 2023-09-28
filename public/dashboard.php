@@ -35,10 +35,15 @@
     </div>
 
     <?php
-        if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
+        if ($_SESSION["authenticated"] !== true) {
             // Redirect the user to the login page if not authenticated
             header("Location: login.php");
             exit();
+        } else {
+            // Retrieve the user ID
+            $user_id = $_SESSION['user_id'];
+            // echo $user_id;
+            setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
         }
     ?>
 </body>
