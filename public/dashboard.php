@@ -39,10 +39,6 @@
             // Redirect the user to the login page if not authenticated
             header("Location: login.php");
             exit();
-        } else {
-            // Retrieve the user ID
-            $user_id = $_SESSION['user_id'];
-            setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
         }
     ?>
 </body>
