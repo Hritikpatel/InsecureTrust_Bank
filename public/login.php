@@ -1,6 +1,7 @@
 <!-- login.php -->
 <?php
-    session_start(); 
+    session_start();
+    $_SESSION["authenticated"] = false;
 ?>
 <!DOCTYPE html>
 <html lang="en">

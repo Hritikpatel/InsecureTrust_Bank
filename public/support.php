@@ -28,7 +28,7 @@
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
         <?php
-            if (isset($_SESSION['user_id'])){
+            if ($_SESSION["authenticated"]){
                 echo '<a href="login.php"><button type="button" class="btn">Logout</button></a>';
             }else{
                 echo '<a href="login.php"><button type="button" class="btn">Login</button></a>';
