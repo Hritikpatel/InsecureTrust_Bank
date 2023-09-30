@@ -1,6 +1,6 @@
 // JavaScript
-// var userID = document.cookie.split('; ').find(cookie => cookie.startsWith('loggedUser:'));
-var userID="<%= Session['user_id'] %>";
+var userID = document.cookie.split('; ').find(cookie => cookie.startsWith('loggedUser:'));
+// console.log(userID);
 if (userID) {
     userID = userID.split('=')[1];
     console.log(userID);

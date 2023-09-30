@@ -21,9 +21,9 @@
          } 
          else {
             // Retrieve the user ID
-            // $user_id = $_SESSION['user_id'];
-            // // echo $user_id;
-            // setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
+            $user_id = $_SESSION['user_id'];
+            // echo $user_id;
+            setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
         }
     ?>
     <nav class="navbar">

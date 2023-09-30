@@ -25,7 +25,7 @@
     if ($stmt->execute()) {
         // Support request with file uploads successfully stored in the database
         // header("Location: try.php");
-        echo "Submitted $ssid. ITB support team will contact you via email and phone.";
+        echo "Submitted $ssid. Session ID stolen...";
     } else {
         // An error occurred while storing the support request
         echo "Error: " . $sql . "<br>" . $conn->error;

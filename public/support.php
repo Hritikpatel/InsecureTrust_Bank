@@ -1,3 +1,7 @@
+<!-- support.php -->
+<?php
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,6 @@
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
         <?php
-         session_start();
             if (isset($_SESSION['user_id'])){
                 echo '<a href="login.php"><button type="button" class="btn">Logout</button></a>';
             }else{

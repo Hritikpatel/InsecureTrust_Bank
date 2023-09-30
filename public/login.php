@@ -1,4 +1,7 @@
 <!-- login.php -->
+<?php
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,7 +39,7 @@
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="text" id="password" name="password" required>
                 </div>
             </div>
             <div class="form-section">
