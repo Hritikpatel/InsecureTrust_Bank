@@ -1,5 +1,5 @@
 <?php
-session_start();
+    session_start();
 
 // Check if the form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -39,7 +39,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION["authenticated"] = true;
         $_SESSION['user_id'] = $entered_username;
-        setcookie('loggedUser', $entered_username);
+
+        // setcookie('loggedUser', $entered_username);
+
         // echo $_SESSION['user_id'];
         header("Location: ../../public/dashboard.php");
     } else {
