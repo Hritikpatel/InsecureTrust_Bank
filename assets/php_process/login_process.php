@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Authentication successful
         $_SESSION["authenticated"] = true;
         $_SESSION['user_id'] = $entered_username;
-        setcookie('loggedUser', $entered_username, time() + 3600, '/');
+        setcookie('loggedUser', $entered_username);
         // echo $_SESSION['user_id'];
         header("Location: ../../public/dashboard.php");
     } else {

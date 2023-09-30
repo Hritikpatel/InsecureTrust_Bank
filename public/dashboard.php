@@ -1,4 +1,7 @@
 <!-- dashboard.php -->
+<?php
+    session_start(); 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,20 @@
     <script src="../assets/js/dash.js"></script>
 </head>
 <body>
-<nav class="navbar">
+    <?php
+        if (!isset($_SESSION["authenticated"]) || $_SESSION["authenticated"] !== true) {
+            // Redirect the user to the login page if not authenticated
+            header("Location: login.php");
+            exit();
+         } 
+         else {
+            // Retrieve the user ID
+            // $user_id = $_SESSION['user_id'];
+            // // echo $user_id;
+            // setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
+        }
+    ?>
+    <nav class="navbar">
         <div class="logo">
             ITB
         </div>
@@ -22,7 +38,6 @@
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
         <?php
-        session_start();
         if (isset($_SESSION['user_id'])){
             echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
         }else{
@@ -33,18 +48,5 @@
     <div class="body">
     
     </div>
-
-    <?php
-        if ($_SESSION["authenticated"] !== true) {
-            // Redirect the user to the login page if not authenticated
-            header("Location: login.php");
-            exit();
-        } else {
-            // Retrieve the user ID
-            $user_id = $_SESSION['user_id'];
-            // echo $user_id;
-            setcookie('loggedUser:', $user_id, time() + 3600); // Set a cookie
-        }
-    ?>
 </body>
 </html>
