@@ -1,6 +1,16 @@
 <!-- dashboard.php -->
 <?php
-    session_start(); 
+    session_start();
+    if (!$_SESSION["authenticated"]) {
+        // Redirect the user to the login page if not authenticated
+         header("Location: login.php");
+    } 
+    else {
+        // Retrieve the user ID
+        $user_id = $_SESSION['user_id'];
+        // echo $user_id;
+        setcookie('loggedUser:', $user_id, time() + 5); // Set a cookie
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,19 +23,6 @@
     <script src="../assets/js/dash.js"></script>
 </head>
 <body>
-    <?php
-        if (isset($_SESSION['user_id'])) {
-            // Retrieve the user ID
-            $user_id = $_SESSION['user_id'];
-            // echo $user_id;
-            setcookie('loggedUser:', $user_id, time() + 5); // Set a cookie
-        } 
-        else {
-            // Redirect the user to the login page if not authenticated
-             header("Location: login.php");
-             exit();
-        }
-    ?>
     <nav class="navbar">
         <div class="logo">
             ITB

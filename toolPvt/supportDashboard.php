@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if (!$_SESSION["authenticated"]) {
+        header("Location: supportLogin.php"); // Redirect back to the login page with an error message
+        exit();
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,13 +29,7 @@
                 Support Dashboard
             </h1>
         </ul>
-        <?php
-            if ("login" == "lgin"){
-                echo '<a href="login.php"><button type="button" class="btn">Login</button></a>';
-            }else{
-                echo '<a href="login.php"><button type="button" class="btn">Logout</button></a>';
-            }
-        ?>
+        <a href="supportLogin.php"><button type="button" class="btn">Logout</button></a>
     </nav>
     <div class="body">
     <div class="container">
