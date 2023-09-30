@@ -4,12 +4,7 @@
     if (!$_SESSION["authenticated"]) {
         // Redirect the user to the login page if not authenticated
          header("Location: login.php");
-    } 
-    else {
-        // Retrieve the user ID
-        $user_id = $_SESSION['user_id'];
-        // echo $user_id;
-        setcookie('loggedUser:', $user_id, time() + 5); // Set a cookie
+         exit();
     }
 ?>
 <!DOCTYPE html>
@@ -34,13 +29,8 @@
             <li class="item"><a href="support.php">Support</a></li>
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
-        <?php
-        if (isset($_SESSION['user_id'])){
-            echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
-        }else{
-            echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
-        }
-        ?>
+        <a href="login.php" ><button type="button" class="btn">Logout</button></a>
+        
     </nav>
     <div class="body">
     

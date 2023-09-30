@@ -22,7 +22,6 @@ if ($method === "POST") {
         if ($entered_username === $valid_username && $entered_password === $valid_password) {
             // Authentication successful
             $_SESSION["authenticated"] = true;
-            $_SESSION["SSID"] = session_id();
             header("Location: supportDashboard.php"); // Redirect to the dashboard or another authenticated page
             exit();
         } else {
