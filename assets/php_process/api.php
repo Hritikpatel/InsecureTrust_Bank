@@ -5,8 +5,6 @@
     $method = $_SERVER["REQUEST_METHOD"];
 
 
-
-
     if ($method== "GET"){
         // Your data or processing logic here
         $responseData = ["message" => "Data from PHP"];

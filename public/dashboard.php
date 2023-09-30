@@ -1,10 +1,13 @@
 <!-- dashboard.php -->
+
 <?php
     session_start();
     if (!$_SESSION["authenticated"]) {
         // Redirect the user to the login page if not authenticated
          header("Location: login.php");
          exit();
+    } else{
+        setcookie("loggedUser", $_SESSION["user_id"], time() + 30, "/");
     }
 ?>
 <!DOCTYPE html>
