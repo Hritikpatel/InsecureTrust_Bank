@@ -67,55 +67,166 @@ a{
 }
 .body{
     margin-inline: 10px;
+    padding: 20px;
     background-color: rgb(25, 25, 25);
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
     display: grid;
-    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-columns: 0.3fr 1.3fr 0.4fr;
     grid-template-rows: 1fr;
     grid-auto-columns: 1fr;
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-        "main side";
+        "info main side";
+    height: 82svh;
+    /* overflow: hidden; */
 }  
-.main {
+.info{
+    grid-area: info;
+    background-color: blue;
+}
+.main{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1.2fr 1.2fr .6fr;
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-        "saving saving saving"
-        "record record record"
-        "extra extra extra";
+        "saving"
+        "record"
+        "extra";
     grid-area: main;
 }
-.saving {
+.saving{
     grid-area: saving;
+    border-radius: 20px;
+    background-color: var(--White);
 }
-.record {
+.record{
     grid-area: record;
+    background-color: whitesmoke;
 }
 .extra{
     grid-area: extra;
+    background-color: aqua;
 }
 .side{  
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1.4fr 0.6fr;
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-        "Transactions Transactions Transactions"
-        "Transactions Transactions Transactions"
-        "card card card";
+        "Transactions"
+        "card";
     grid-area: side;
+    outline: 2px solid gray;
+    border-radius: 20px;
+
 }
 .transactions{
     grid-area: Transactions;
-}      
+    height: 430px;    
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: normal;
+    align-content: stretch;
+
+    color: var(--White);
+    margin: 15px;
+
+    padding-bottom: 10px;
+    border-bottom: 2px solid gray;
+}
+.head{
+    font-size: 20px;
+    font-weight: 700;
+}
+.listing{
+    font-size: 12px;
+    border: 2px solid var(--inactive-color);
+    border-radius: 200px;
+    padding-inline: 10px;
+    padding-block: 5px;
+}
+.trans-body{
+    height: 365px;
+    overflow: scroll;
+}
+.trans-record{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: center;
+    align-content: normal;
+
+    margin: 10px;
+    padding: 10px;
+
+    background-color: rgb(79, 79, 79);
+    
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--White);
+
+    border-radius: 10px;
+}
+.trans-record > .icon > img{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+    background-color: gray;
+    height: 20px;
+    aspect-ratio: 1.1/1;
+    padding: 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+.trans-record > .data{
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ""
+        "";
+}
+.trans-record > .data > .date{
+    font-size: 10px;
+    font-weight: 400;
+    color: gray;
+}
+.trans-record > .amt{
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+}
+
+
+
+
+
 .card{
     grid-area: card;
+    outline: 2px solid gray;
+    border-radius: 20px;
+    /* background-color: beige; */
 }
       
   
