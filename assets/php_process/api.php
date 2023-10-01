@@ -1,5 +1,4 @@
 <?php
-    session_save_path("/");
     session_start();
 
 
@@ -13,7 +12,7 @@
         // Set the Content-Type header to indicate JSON
         header("Content-Type: application/json");
 
-        session_destroy();
+        // session_destroy();
         // Return the JSON-encoded data
         echo json_encode($responseData);
     }

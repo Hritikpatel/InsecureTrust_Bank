@@ -1,5 +1,4 @@
 <?php
-    session_save_path("/");
     session_start();
 
 // Check if the form is submitted
