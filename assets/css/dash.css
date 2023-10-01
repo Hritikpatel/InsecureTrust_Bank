@@ -66,8 +66,56 @@ a{
     color: var(--White);
 }
 .body{
-    /* height: 1000svh; */
     margin-inline: 10px;
     background-color: rgb(25, 25, 25);
     border-radius: 20px 20px 0 0;
+    display: grid;
+    grid-template-columns: 1.4fr 0.6fr;
+    grid-template-rows: 1fr;
+    grid-auto-columns: 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "main side";
+}  
+.main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "saving saving saving"
+        "record record record"
+        "extra extra extra";
+    grid-area: main;
 }
+.saving {
+    grid-area: saving;
+}
+.record {
+    grid-area: record;
+}
+.extra{
+    grid-area: extra;
+}
+.side{  
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "Transactions Transactions Transactions"
+        "Transactions Transactions Transactions"
+        "card card card";
+    grid-area: side;
+}
+.transactions{
+    grid-area: Transactions;
+}      
+.card{
+    grid-area: card;
+}
+      
+  

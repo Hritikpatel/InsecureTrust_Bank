@@ -36,7 +36,15 @@
         
     </nav>
     <div class="body">
-    
+        <div class="main">
+            <div class="saving"></div>
+            <div class="record"></div>
+            <div class="extra"></div>
+        </div>
+        <div class="side">
+            <div class="transactions"></div>
+            <div class="card"></div>
+        </div>
     </div>
 </body>
 </html>

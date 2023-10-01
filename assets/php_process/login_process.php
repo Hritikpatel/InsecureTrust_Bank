@@ -43,6 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../../public/dashboard.php");
     } else {
         // Authentication failed
+        $_SESSION["authenticated"] = false;
         $_SESSION["error"] = "Invalid username or password.";
         header("Location: ../../public/login.php");
     }
