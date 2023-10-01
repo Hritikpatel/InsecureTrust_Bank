@@ -1,3 +1,7 @@
+<?php
+    session_save_path("/");
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +28,6 @@
             <li class="item"><a href="faq.php" class="active">FAQs</a></li>
         </ul>
         <?php
-            session_start();
             if ($_SESSION["authenticated"]){
                 echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
             }else{

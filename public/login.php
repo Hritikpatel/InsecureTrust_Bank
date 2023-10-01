@@ -1,5 +1,6 @@
 <!-- login.php -->
 <?php
+    session_save_path("/");
     session_start();
     $_SESSION["authenticated"] = false;
 ?>

@@ -1,6 +1,7 @@
 <!-- dashboard.php -->
 
 <?php
+    session_save_path("/");
     session_start();
     if (!$_SESSION["authenticated"]) {
         // Redirect the user to the login page if not authenticated
