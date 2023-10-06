@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
 *{
     margin: 0px;
     padding: 0px;
@@ -87,23 +89,129 @@ a{
 }
 .main{
     display: grid;
-    grid-template-rows: 1.2fr 1.2fr .6fr;
+    grid-template-rows: 1fr 1.3fr .7fr;
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-        "saving"
+        "saving-info"
         "record"
         "extra";
     grid-area: main;
 }
-.saving{
-    grid-area: saving;
+.saving-info{
+    grid-area: saving-info;
     border-radius: 20px;
     background-color: var(--White);
+    
+    display: grid;
+    grid-template-columns: 1.6fr 0.7fr 0.7fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "saving received send";
+}
+.saving{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "balance balance balance"
+        ". . ."
+        "accType accType accType"
+        "accNo accNo accNo";
+    grid-area: saving;
+
+    color: var(--active-color);
+
+    padding: 20px;
+}
+.balance{
+    grid-area: balance;
+    text-transform: capitalize;
+    font-size: 28px;
+    
+
+}
+.accType{
+    grid-area: accType;
+}
+.accNo{
+    grid-area: accNo;
+}
+
+.received {
+    grid-area: received;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+}
+.received > .item{
+    flex-grow: 1;
+}
+.send{
+    grid-area: send;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+
+}
+
+.send > *{
+flex-grow: 1;
 }
 .record{
     grid-area: record;
+    padding: 20px;
     background-color: whitesmoke;
+    border-radius: 20px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.links{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: stretch;
+
+    border-radius: 20px;
+}
+.quklnk{
+    width: 19%;
+    height: 75%;
+}
+.quklnk-btn{
+    width: 100%;
+    height: 100%;
+    color: var(--active-color);
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    border-radius: 10px;
+    transition: 250ms;
+}
+.quklnk-btn > i{
+    color: #000000;
+}
+.quklnk-btn:hover > i{
+    color: #ffffff;
+}
+.quklnk-btn:hover{
+    background-color: var(--active-color);
 }
 .extra{
     grid-area: extra;
@@ -116,7 +224,7 @@ a{
     grid-auto-flow: row;
     grid-template-areas:
         "Transactions"
-        "card";
+        "cards";
     grid-area: side;
     outline: 2px solid gray;
     border-radius: 20px;
@@ -217,16 +325,100 @@ a{
     align-self: auto;
     order: 0;
 }
-
-
-
-
-
-.card{
-    grid-area: card;
+.cards{
+    grid-area: cards;
     outline: 2px solid gray;
     border-radius: 20px;
-    /* background-color: beige; */
+    padding-inline: 2.5px;
+    padding-top: 20px;
 }
-      
-  
+.credit-card{
+    font-family: "Share Tech Mono", monospace;
+    color: var(--active-color);
+    border-radius: 20px;
+    background: var(--White);
+    padding: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-row-gap: 0.5rem;
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0.35rem;
+    grid-template-areas: 
+        "limit limit . provider"
+        "cardNO cardNO cvv-text cvv"
+        "number number number number"
+        "cardType cardType validity-text validity";
+        font-size: 16px;
+        font-weight: 600;
+}
+.credit-card > .limit{
+    grid-area: limit;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 10px;
+
+}
+.credit-card > .provider{
+    grid-area: provider;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.credit-card > .number{
+    grid-area: number;
+}
+.credit-card > .cardNO{
+    grid-area: cardNO;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    padding-block-start: 10px;
+    color: var(--inactive-color);
+}
+.credit-card > .cardType{
+    grid-area: cardType;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.credit-card > .validity{
+    grid-area: validity;
+    font-size: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.credit-card > .validity-text{
+    grid-area: validity-text;
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--inactive-color);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.credit-card > .cvv-text{
+    grid-area: cvv-text;
+    
+    font-family: "Lato", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    color: var(--inactive-color);
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.credit-card > .cvv{
+    grid-area: cvv;
+    font-family: "Lato", sans-serfi;
+    font-size: 1rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

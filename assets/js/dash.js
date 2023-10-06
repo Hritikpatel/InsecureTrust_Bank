@@ -8,6 +8,9 @@ if (userID) {
     $.ajax({
         url: '../assets/php_process/api.php', // PHP script URL
         method: 'GET',
+        data: {
+            userID: userID
+        },
         success: function(response) {
             var userData = response;
             console.log(userData);

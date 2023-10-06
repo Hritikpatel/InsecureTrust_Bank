@@ -27,7 +27,7 @@
             <li class="item"><a href="faq.php" class="active">FAQs</a></li>
         </ul>
         <?php
-            if ($_SESSION["authenticated"]){
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"]){
                 echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
             }else{
                 echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
@@ -53,6 +53,7 @@
                         // $searchQuery = $_GET["search"];
                         // $searchQuery = strtolower($searchQuery);
 
+                        // <scr<script>ipt>
                         // while ((strpos($searchQuery,"script"))) {
                         //     $searchQuery = str_replace("script","!!!",$searchQuery);
                         // }

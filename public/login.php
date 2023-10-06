@@ -1,5 +1,6 @@
 <!-- login.php -->
 <?php
+    session_unset();
     session_start();
     $_SESSION["authenticated"] = false;
 ?>

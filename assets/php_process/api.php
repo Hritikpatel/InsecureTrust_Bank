@@ -6,8 +6,10 @@
 
 
     if ($method == "GET"){
+        
+        $user = $_GET["userID"];
         // Your data or processing logic here
-        $responseData = ["message" => "Data from PHP"];
+        $responseData = ["message" => "Data from PHP", "USER" => $user];
         
         // Set the Content-Type header to indicate JSON
         header("Content-Type: application/json");

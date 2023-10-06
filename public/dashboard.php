@@ -35,13 +35,76 @@
         <a href="login.php" ><button type="button" class="btn">Logout</button></a>
     </nav>
     <div class="body">
-        <div class="info"></div>
-        <div class="main">
-            <div class="saving">
+        <div class="info">
 
+        </div>
+        <div class="main">
+            <div class="saving-info">
+                <div class="saving">
+                    <div class="balance">
+                        Your balance:  $500000000
+                    </div>
+                    <div class="accType">
+                        Saving Account
+                    </div>
+                    <div class="accNo">
+                        XXXX XXX XXXX
+                    </div>
+                </div>
+                <div class="received">
+                    <div class="item">Income/mo</div>
+                    <div class="item">
+                        <img src="../assets/images/deposit-s.png" alt="">
+                        $2,225.22
+                    </div>
+                    <div class="item">
+                        <button type="button" class="btn">Deposit</button>
+                    </div>
+                </div>
+                <div class="send">
+                    <div class="item">Expanse/mo</div>
+                    <div class="item">
+                        <img src="../assets/images/deposit-s.png" alt="">
+                        $1,332.22
+                    </div>
+                    <div class="item">
+                        <button type="button" class="btn">Withdraw</button>
+                    </div>
+                </div>
             </div>
-            <div class="record"></div>
-            <div class="extra"></div>
+            <div class="record">
+                <div class="head">Quick Links</div>
+                <div class="links">
+                    <a href="" class="quklnk">
+                        <button type="button" class="quklnk-btn" title="ACCOUNT">
+                            <i class="fa-solid fa-building-columns fa-2xl"></i>
+                        </button>
+                    </a>
+                    <a href="" class="quklnk">
+                        <button type="button" class="quklnk-btn" title="CREDIT CARD">
+                            <i class="fa-solid fa-credit-card fa-2xl"></i>
+                        </button>
+                    </a>
+                    <a href="" class="quklnk">
+                        <button type="button" class="quklnk-btn" title="LOCKER">
+                            <i class="fa-solid fa-vault fa-2xl"></i>
+                        </button>
+                    </a>
+                    <a href="" class="quklnk">
+                        <button type="button" class="quklnk-btn" title="INSURANCE">
+                            <i class="fa-solid fa-file-invoice fa-2xl"></i>
+                        </button>
+                    </a>
+                    <a href="" class="quklnk">
+                        <button type="button" class="quklnk-btn" title="SUPPORT">
+                            <i class="fa-solid fa-headset fa-2xl"></i>
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <div class="extra">
+                
+            </div>
         </div>
         <div class="side">
             <div class="transactions">
@@ -124,7 +187,19 @@
                     </div>
                 </div>
             </div>
-            <div class="card">
+            <div class="cards">
+                <div class="credit-card">
+                    <div class="limit">$ 2,453</div>
+                    <div class="provider"><i class="fab fa-cc-visa fa-2xl" style="color: #000000;"></i></div>
+                    <div class="cardNO">Card Number</div>
+                    <div class="cvv-text">CVV</div>
+                    <div class="cvv">619</div>
+                    <div class="number">xxxx xxxx xxxx Ax80</div>
+                    <div class="cardType">Credit Card</div>
+                    <div class="validity-text">Valid till</div>
+                    <div class="validity">09/11</div>
+                </div>
+                <!-- <div class="card"></div> -->
             </div>
         </div>
     </div>
