@@ -36,7 +36,8 @@
     </nav>
     <div class="body">
         <div class="info">
-
+            <div class="pvt"></div>
+            <div class="bankInfo"></div>
         </div>
         <div class="main">
             <div class="saving-info">
@@ -52,23 +53,21 @@
                     </div>
                 </div>
                 <div class="received">
-                    <div class="item">Income/mo</div>
-                    <div class="item">
-                        <img src="../assets/images/deposit-s.png" alt="">
-                        $2,225.22
+                    <div class="I">Income/mo</div>
+                    <div class="II">
+                        <pre><i class="fa-solid fa-chevron-up fa-xl" style="color: rgb(0, 255, 0);"></i>  $2,225.22</pre>
                     </div>
-                    <div class="item">
-                        <button type="button" class="btn">Deposit</button>
+                    <div class="III">
+                        <button type="button" class="btn save">Deposit</button>
                     </div>
                 </div>
                 <div class="send">
-                    <div class="item">Expanse/mo</div>
-                    <div class="item">
-                        <img src="../assets/images/deposit-s.png" alt="">
-                        $1,332.22
+                    <div class="I">Expanse/mo</div>
+                    <div class="II">
+                    <pre><i class="fa-solid fa-chevron-down fa-xl" style="color: rgb(255, 0, 0);"></i>  $2,225.22</pre>
                     </div>
-                    <div class="item">
-                        <button type="button" class="btn">Withdraw</button>
+                    <div class="III">
+                        <button type="button" class="btn save">Withdraw</button>
                     </div>
                 </div>
             </div>
@@ -103,7 +102,61 @@
                 </div>
             </div>
             <div class="extra">
-                
+                <div class="SendTo">
+                    <div class="head">
+                        Send To
+                    </div>
+                    <div class="avatarList">
+                        <div class="avatar">
+                            <button class="btn avatar__image">
+                                <i class="fa-solid fa-plus fa-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="avatar">
+                            <!-- Avatar image -->
+                            <img class="avatar__image" src="https://imgs.search.brave.com/S4Q092Ic9VDPZIPUc2EqH8Bvx0XVvLNErkxgHy8FpjA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idWZm/ZXIuY29tL2xpYnJh/cnkvY29udGVudC9p/bWFnZXMvMjAyMi8w/My9hbWluYS5wbmc" />
+                        </div>
+                        <div class="avatar">
+                            <!-- Avatar image -->
+                            <img class="avatar__image" src="https://imgs.search.brave.com/z-3_VMVbo5k1c4nYN-MGQSo7jUle-HYqNAS5ED1Soag/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9kMnFw/MHNpb3RsYTc0Ni5j/bG91ZGZyb250Lm5l/dC9pbWcvdXNlLWNh/c2VzL3Byb2ZpbGUt/cGljdHVyZS90ZW1w/bGF0ZV8wLmpwZw" />
+                        </div>
+                        <div class="avatar">
+                            <!-- Avatar image -->
+                            <img class="avatar__image" src="https://imgs.search.brave.com/syssE5L1Rg5E1pnbjYCd7XwnArNdLMZ-PHPig00siHg/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idWZm/ZXIuY29tL2xpYnJh/cnkvY29udGVudC9p/bWFnZXMvMjAyMi8w/My9za2l0Y2gtLTct/LnBuZw" />
+                        </div>
+                    </div>
+                </div>
+                <div class="auto">
+                    <div class="head">AutoPay</div>
+                    <div class="avatarList">
+                        <div class="avatar">
+                            <button type="button" class="btn avatar__image">
+                                <i class="fa-brands fa-discord fa-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="avatar">
+                            <!-- Avatar image -->
+                            <button class="btn avatar__image">
+                                <i class="fa-solid fa-arrow-trend-up fa-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="avatar">
+                            <button class="btn avatar__image">
+                                <i class="fa-solid fa-newspaper fa-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="avatar">
+                            <button class="btn avatar__image">
+                                <i class="fa-solid fa-shield-halved fa-2xl"></i>
+                            </button>
+                        </div>
+                        <div class="avatar">
+                            <button class="btn avatar__image">
+                                <i class="fa-brands fa-medium fa-2xl"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="side">
