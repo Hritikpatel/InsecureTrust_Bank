@@ -31,7 +31,8 @@
         <a href="login.php"><button type="button" class="btn">Sign up</button></a>
     </nav>
     <div class="body">
-        <form id="support-form" action="..\assets\php_process\login_process.php" method="post">
+        <form id="support-form" action="supportApi.php" method="POST">
+            <input type="hidden" name="action" value="supportLogin" >
             <!-- Contact Information Section -->
             <h1>LOG IN</h1>
             <div class="form-section">

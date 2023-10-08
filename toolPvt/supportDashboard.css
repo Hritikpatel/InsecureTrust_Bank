@@ -5,7 +5,8 @@
     --active-color: black;
     --inactive-color: rgb(140, 140, 140);
     --White: white;
-    /* color: var(--White); */
+    
+    font-size: 14px;
 }
 *::-webkit-scrollbar{
     display: none;
@@ -71,9 +72,9 @@ a{
     color: var(--White);
 }
 .body{
-    /* height: 1000svh; */
+    
     margin-inline: 10px;
-    padding: 50px;
+    padding: 20px;
     background-color: rgb(25, 25, 25);
     border-radius: 20px 20px 0 0;
 }
@@ -107,17 +108,54 @@ a{
       "cardholder info";
 }  
 .cardholder{ 
-    grid-area: cardholder; 
+    grid-area: cardholder;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-auto-columns: 1fr;
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        ". . ."
+        ". . ."
+        ". . .";
+    
+    padding: 20px;
 }
-  
 .info{
     grid-area: info;
 }
-.cardholder{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: normal;
-    align-items: normal;
-    align-content: normal;
+.card{ 
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-auto-columns: 1fr;
+    gap: 5px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "category category"
+      "tktno ."
+      "info info"
+      "info info"
+      "info info"
+      "open open";
+
+    padding: 20px;
+
+    background-color: var(--White);
+    border-radius: 20px;
 }
+.category{
+    grid-area: category;
+}  
+.tktn{
+    grid-area: tktno;
+}
+.info{
+    grid-area: info;
+}  
+.open{
+    grid-area: open;
+}
+  

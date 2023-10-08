@@ -32,26 +32,55 @@
         <a href="supportLogin.php"><button type="button" class="btn">Logout</button></a>
     </nav>
     <div class="body">
-    <div class="container">
-        <div class="cardholder" id="cardholder">
-            <div class="card">
-                <span class="tag orange">Technical Support</span>
-                <span id="card">description: "Test"</span>
-                <!-- <script>alert("Works")</script> -->
+        <div class="container">
+            <div class="cardholder" id="cardholder">
+                <div class="card">
+                    <div class="category">
+                        <div class="tag orange">Hello</div>
+                    </div>
+                    <div class="tktno">#562TUS24</div>
+                    <div class="info">
+                        Name: Hritik<br>
+                        Email: shakyasingh13@gmail.com<br>
+                        Description: Hello World<br>
+                    </div>
+                    <div class="open">
+                        <button class="btn">View</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="category">
+                        <div class="tag orange">Hello</div>
+                    </div>
+                    <div class="tktno">#562TUS24</div>
+                    <div class="info">
+                        Name: Hritik<br>
+                        Email: shakyasingh13@gmail.com<br>
+                        Description: Hello World<br>
+                    </div>
+                    <div class="open">
+                        <button class="btn">View</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="category">
+                        <div class="tag orange">Hello</div>
+                    </div>
+                    <div class="tktno">#562TUS24</div>
+                    <div class="info">
+                        Name: Hritik<br>
+                        Email: shakyasingh13@gmail.com<br>
+                        Description: Hello World<br>
+                    </div>
+                    <div class="open">
+                        <button class="btn">View</button>
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                
             </div>
         </div>
-        <div class="info"></div>
-        </div>
-        <span class="tag orange">Technical Support</span>
-        <span class="tag blue">Billing Inquiries</span>
-        <span class="tag green">Account Issues</span>
-        <span># TZN1WOWJ</span>
-        <a href="">
-            <div class="file">
-                <i class="fa-solid fa-file" style="color: #0f0f0f;" title="Hello"></i>
-            </div>
-        </a>
-        <a href="xyz.php">xyz</a>
     </div>
 </body>
 </html>

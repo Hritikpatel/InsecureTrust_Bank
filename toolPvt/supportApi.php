@@ -27,7 +27,7 @@ if ($method === "POST") {
         } else {
             // Authentication failed
             $_SESSION["error"] = "Invalid username or password.";
-            header("Location: login.php"); // Redirect back to the login page with an error message
+            header("Location: supportLogin.php"); // Redirect back to the login page with an error message
             exit();
         }
     }else {
