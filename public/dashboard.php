@@ -36,8 +36,67 @@
     </nav>
     <div class="body">
         <div class="info">
-            <div class="pvt"></div>
-            <div class="bankInfo"></div>
+            <div class="pvt">
+                <div class="head">Personal Info</div>
+                <div class="avatar">
+                    <img class="avatar__image" src="https://imgs.search.brave.com/S4Q092Ic9VDPZIPUc2EqH8Bvx0XVvLNErkxgHy8FpjA/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9idWZm/ZXIuY29tL2xpYnJh/cnkvY29udGVudC9p/bWFnZXMvMjAyMi8w/My9hbWluYS5wbmc" />
+                </div>
+                <table>
+                    <tr>
+                        <th>Name</th>
+                        <td>: Hritik</td>
+                    </tr>
+                    <tr>
+                        <th>D.O.B</th>
+                        <td>: 26/11/09</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>: hritik@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>: +91 8084656751</td>
+                    </tr>
+                    <tr>
+                        <th>Adhaar</th>
+                        <td>: 2222 3235 7293</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>: Bhabua</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="bankInfo">
+                <div class="head">Banking Info</div>
+                <table>
+                    <tr>
+                        <th>Account No.</th>
+                        <td>: 5829 486 9992</td>
+                    </tr>
+                    <tr>
+                        <th>IFSC Code</th>
+                        <td>: ABCD1234567</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>: hritik@gmail.com</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>: +91 8084656751</td>
+                    </tr>
+                    <tr>
+                        <th>Adhaar</th>
+                        <td>: 2222 3235 7293</td>
+                    </tr>
+                    <tr>
+                        <th>Address</th>
+                        <td>: Bhabua</td>
+                    </tr>
+                </table>
+            </div>
         </div>
         <div class="main">
             <div class="saving-info">
