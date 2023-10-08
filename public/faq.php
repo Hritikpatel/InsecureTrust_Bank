@@ -20,8 +20,8 @@
             ITB
         </div>
         <ul class="list">
-            <li class="item"><a href="">Home</a></li>
-            <li class="item"><a href="">About Us</a></li>
+            <li class="item"><a href="home.php">Home</a></li>
+            <li class="item"><a href="about.php">About Us</a></li>
             <li class="item"><a href="dashboard.php">Dashboard</a></li>
             <li class="item"><a href="support.php">Support</a></li>
             <li class="item"><a href="faq.php" class="active">FAQs</a></li>
