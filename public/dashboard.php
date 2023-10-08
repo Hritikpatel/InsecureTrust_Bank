@@ -80,20 +80,44 @@
                         <td>: ABCD1234567</td>
                     </tr>
                     <tr>
-                        <th>Email</th>
-                        <td>: hritik@gmail.com</td>
+                        <th>Home Branch</th>
+                        <td>: Bhabua City</td>
+                    </tr>
+                    <tr>
+                        <th>Acc. Type</th>
+                        <td>: Savings</td>
+                    </tr>
+                    <tr>
+                        <th>CIBIL Score</th>
+                        <td>: 750 (Good)</td>
+                    </tr>
+                    <tr>
+                        <th>Acc. Status</th>
+                        <td>: Active</td>
+                    </tr>
+                    <tr>
+                        <th>Nominee</th>
+                        <td>: Jane Doe</td>
                     </tr>
                     <tr>
                         <th>Phone</th>
-                        <td>: +91 8084656751</td>
+                        <td>: +1 1234567890</td>
                     </tr>
                     <tr>
-                        <th>Adhaar</th>
-                        <td>: 2222 3235 7293</td>
+                        <th>Email</th>
+                        <td>: xyz@mail.com</td>
                     </tr>
                     <tr>
-                        <th>Address</th>
-                        <td>: Bhabua</td>
+                        <th>RM</th>
+                        <td>: John Doe</td>
+                    </tr>
+                    <tr>
+                        <th>Phone</th>
+                        <td>: +1 1234433247</td>
+                    </tr>
+                    <tr>
+                        <th>Email</th>
+                        <td>: RM@ITB.com</td>
                     </tr>
                 </table>
             </div>
