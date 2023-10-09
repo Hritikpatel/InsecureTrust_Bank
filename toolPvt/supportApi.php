@@ -51,10 +51,7 @@ if ($method === "POST") {
             // Prepare and execute the SQL query
             $stmt = $pdo->prepare("SELECT full_name, email, description, category, attachments, phone, tkt_no FROM support WHERE isActive IS TRUE");
             $stmt->execute();
-        
-            // Fetch data from the database
-            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            
+
             // Fetch data from the database
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
             for ($i=0; $i < sizeof($data); $i++) { 
