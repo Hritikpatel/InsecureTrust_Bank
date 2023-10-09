@@ -5,7 +5,7 @@
     --active-color: black;
     --inactive-color: rgb(140, 140, 140);
     --White: white;
-    
+    --color: rgb(240, 240, 240);
     font-size: 14px;
 }
 *::-webkit-scrollbar{
@@ -67,6 +67,17 @@ a{
     cursor: pointer;
     /* transition: 300ms ease-in-out; */
 }
+.disabled{
+    width: 150px;
+    height: 95%;
+    color: var(--inactive-color);
+    background-color: var(--color240);
+    border: none;
+    border-radius: 500px;
+    font-weight: 600;
+    cursor: pointer;
+    /* transition: 300ms ease-in-out; */
+}
 .btn:hover{
     background-color: var(--active-color);
     color: var(--White);
@@ -74,17 +85,22 @@ a{
 .body{
     
     margin-inline: 10px;
-    padding: 20px;
+    /* padding: 20px; */
     background-color: rgb(25, 25, 25);
-    border-radius: 20px 20px 0 0;
+    border-radius: 20px;
+
+    height: 87svh;
+    overflow: hidden;
 }
 .tag{
     padding: 5px;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     font-size: 10px;
     color: whitesmoke;
     border: 1px solid whitesmoke;
     border-radius: 100px;
+
+    text-align: center;
 }
 .orange{
     color: orange;
@@ -105,7 +121,10 @@ a{
     gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-      "cardholder info";
+      "cardholder detail-area";
+    height: 85svh;
+    overflow: hidden;
+    
 }  
 .cardholder{ 
     grid-area: cardholder;
@@ -114,7 +133,7 @@ a{
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     grid-auto-columns: 1fr;
-    gap: 20px 20px;
+    gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
         ". . ."
@@ -122,26 +141,35 @@ a{
         ". . .";
     
     padding: 20px;
+    margin: 20px;
+    margin-right: 0px;
+    overflow: scroll;
 }
-.info{
-    grid-area: info;
+.detail-area{
+    grid-area: detail-area;
+    padding: 10px;
+    margin: 40px;
+    margin-left: 0px;
+    margin-bottom: 20px;
+    background-color: var(--White);
+    border-radius: 20px;
+    overflow: hidden;
 }
 .card{ 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+    grid-template-rows: 0.5fr 1.8fr 0.7fr;
     grid-auto-columns: 1fr;
-    gap: 5px 0px;
+    gap: 10px 10px;
     grid-auto-flow: row;
     grid-template-areas:
-      "category category"
-      "tktno ."
-      "info info"
-      "info info"
-      "info info"
-      "open open";
+        "tktno category"
+        "info info"
+        "open open";
+    align-items: center;
+    justify-items: stretch;
 
-    padding: 20px;
+    padding: 15px;
 
     background-color: var(--White);
     border-radius: 20px;
@@ -158,4 +186,13 @@ a{
 .open{
     grid-area: open;
 }
-  
+.click{
+    width: 100%;
+    height: 100%;
+    padding-block: 10px;
+}
+
+.detail{
+    height: 100%;
+    width: 100%;
+}

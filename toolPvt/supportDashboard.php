@@ -34,51 +34,10 @@
     <div class="body">
         <div class="container">
             <div class="cardholder" id="cardholder">
-                <div class="card">
-                    <div class="category">
-                        <div class="tag orange">Hello</div>
-                    </div>
-                    <div class="tktno">#562TUS24</div>
-                    <div class="info">
-                        Name: Hritik<br>
-                        Email: shakyasingh13@gmail.com<br>
-                        Description: Hello World<br>
-                    </div>
-                    <div class="open">
-                        <button class="btn">View</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="category">
-                        <div class="tag orange">Hello</div>
-                    </div>
-                    <div class="tktno">#562TUS24</div>
-                    <div class="info">
-                        Name: Hritik<br>
-                        Email: shakyasingh13@gmail.com<br>
-                        Description: Hello World<br>
-                    </div>
-                    <div class="open">
-                        <button class="btn">View</button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="category">
-                        <div class="tag orange">Hello</div>
-                    </div>
-                    <div class="tktno">#562TUS24</div>
-                    <div class="info">
-                        Name: Hritik<br>
-                        Email: shakyasingh13@gmail.com<br>
-                        Description: Hello World<br>
-                    </div>
-                    <div class="open">
-                        <button class="btn">View</button>
-                    </div>
-                </div>
             </div>
-            <div class="info">
-                
+            <div class="detail-area">
+                <div class="detail"  id="detail">
+                </div>
             </div>
         </div>
     </div>
