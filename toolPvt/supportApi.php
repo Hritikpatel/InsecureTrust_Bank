@@ -54,7 +54,12 @@ if ($method === "POST") {
         
             // Fetch data from the database
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-            $data[0]['attachments'] = unserialize($data[0]['attachments']);
+            
+            // Fetch data from the database
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            for ($i=0; $i < sizeof($data); $i++) { 
+                $data[$i]['attachments'] = unserialize($data[$i]['attachments']);
+            }
             // Encode the data as JSON
             $response = json_encode($data);
         } catch (PDOException $e) {

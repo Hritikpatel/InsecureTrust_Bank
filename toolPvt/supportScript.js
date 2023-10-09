@@ -10,6 +10,7 @@ var currentClickedButton = null;
 // Get the element with the id "getInfo"
 var getInfoElement = document.getElementById("getInfo");
 
+var tkt_no = document.getElementById("tkt_no")
 
 function getAll() {
     var parameters = {
@@ -34,7 +35,7 @@ function getAll() {
         data.forEach(cardInfo => {
             // cardholder.innerHTML = element.description;
             console.log(cardInfo);
-            var newCard = createCard(cardInfo.full_name, cardInfo.tkt_no, cardInfo.category, cardInfo.email, cardInfo.phone, cardInfo.attachments.length);
+            var newCard = createCard(cardInfo.full_name, cardInfo.tkt_no, cardInfo.category, cardInfo.email, cardInfo.phone, cardInfo.description, cardInfo.attachments.length);
 
             // Append the newly created card to the cardholder
             cardholder.appendChild(newCard);
@@ -73,7 +74,7 @@ function getInfo(get, tkt_no) {
         });
 }
 
-function createCard(name, tktno, category, email, phone, attachmentCount) {
+function createCard(name, tktno, category, email, phone, description, attachmentCount) {
     // Create a new card element
     var card = document.createElement("div");
     card.className = "card";
@@ -115,6 +116,7 @@ function createCard(name, tktno, category, email, phone, attachmentCount) {
         category: category,
         email: email,
         phone: phone,
+        description: description,
         attachmentCount: attachmentCount
     };
 
@@ -150,10 +152,11 @@ function createCard(name, tktno, category, email, phone, attachmentCount) {
 
 // Function to display the card data in an alert
 function displayCardData(cardData) {
-    var detail = document.getElementById("detail");
+    var detail = document.getElementById("userData");
 
-    detail.innerHTML = detail.innerHTML+
-    "\nName: " + cardData.name + "\n" +
+    tkt_no.innerText = cardData.tktno;
+
+    detail.innerHTML = "\nName: " + cardData.name + "\n" +
     "Ticket Number: " + cardData.tktno + "\n" +
     "Category: " + cardData.category + "\n" +
     "Email: " + cardData.email + "\n" +
@@ -169,9 +172,7 @@ getInfoElement.addEventListener("change", function() {
     // This function will be executed when the "getUser" element's value changes
     var selectedValue = getInfoElement.value; // Get the selected value
     console.log(selectedValue);
-    var tkt_no = document.getElementById("tkt_no").innerText
-    console.log(tkt_no);
-    getInfo(selectedValue, tkt_no)
+    getInfo(selectedValue, tkt_no.innerText)
     .then(data => {
         // Handle the response data here
         for (let index = 0; index < data.length; index++) {

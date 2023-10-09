@@ -50,11 +50,12 @@
                     </div>
                     <div class="form-section">
                         <div class="form-group">
-                            <h2>Hello</h2>
-                            <div class="tktno" id="tkt_no">
-                                9MQTZQHL
+                            <h2>User Data</h2>
+                            <div class="tkt_no" id="tkt_no">
                             </div>
-                            
+                            <div id="userData">
+
+                            </div>
                         </div>
                     </div>
                 </div>
