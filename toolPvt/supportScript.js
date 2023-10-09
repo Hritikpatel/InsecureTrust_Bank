@@ -7,6 +7,10 @@ var cardholder = document.getElementById("cardholder");
 // Define a variable to store the currently clicked button
 var currentClickedButton = null;
 
+// Get the element with the id "getInfo"
+var getInfoElement = document.getElementById("getInfo");
+
+
 function getAll() {
     var parameters = {
     for: 'allData'
@@ -153,11 +157,22 @@ function createCard(name, tktno, category, email, description, attachmentCount) 
 function displayCardData(cardData) {
     var detail = document.getElementById("detail");
 
-    detail.innerHTML = "Name: " + cardData.name + "\n" +
+    detail.innerHTML = detail.innerHTML+
+    "\nName: " + cardData.name + "\n" +
     "Ticket Number: " + cardData.tktno + "\n" +
     "Category: " + cardData.category + "\n" +
     "Email: " + cardData.email + "\n" +
     "Description: " + cardData.description + "\n" +
     "Attachment Count: " + cardData.attachmentCount
 }
+
+
+getInfoElement.addEventListener("change", function() {
+    // This function will be executed when the "getUser" element's value changes
+    var selectedValue = getInfoElement.value; // Get the selected value
+
+    // You can perform actions based on the selected value here
+    console.log("Selected Value: " + selectedValue);
+    
+});
 

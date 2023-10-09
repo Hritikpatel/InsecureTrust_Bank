@@ -37,6 +37,38 @@
             </div>
             <div class="detail-area">
                 <div class="detail"  id="detail">
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="getInfo"><h2>User Query</h2></label>
+                            <select name="getInfo" id="getInfo">
+                                <option value="" disabled>Get info</option>
+                                <option value="accountInfo">Account Info</option>
+                                <option value="transactionInfo">Transaction Info</option>
+                                <option value="*">All Info</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="category">
+                            <div class="tag orange">
+                                Account Issues
+                            </div>
+                        </div>
+                        <div class="tktno">
+                            LEX6BQWI
+                        </div>
+                        <div class="info">
+                            Name: Hritik Patel<br>
+                            Email: hritik@em.team.lucidgrowth.com<br>
+                            Description: jdv<br>
+                            Attachment: undefined Files attached<br>
+                        </div>
+                        <div class="open">
+                            <button class="btn click">
+                                View
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
