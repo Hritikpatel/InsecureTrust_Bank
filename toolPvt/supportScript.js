@@ -46,11 +46,10 @@ function getAll() {
     });
 }
 
-function getUser(number) {
-
+function getInfo(get, tkt_no) {
     var parameters = {
-        for: 'accData',
-        number: number
+        for: get,
+        tkt_no: tkt_no
     };
 
     // Create a URLSearchParams object to encode the parameters
@@ -59,22 +58,19 @@ function getUser(number) {
     // Combine the URL with the encoded parameters
     const url = `${phpFile}?${params.toString()}`;
 
-    // Send a GET request
-    fetch(url)
-    .then(response => {
-        if (!response.ok) {
-        throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        return response.json(); // If the response is JSON
-    })
-    .then(data => {
-        // Handle the response data here
-        console.log(data);
-    })
-    .catch(error => {
-        // Handle errors here
-        console.error('Fetch error:', error);
-    });
+    // Send a GET request and return the promise
+    return fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json(); // If the response is JSON
+        })
+        .catch(error => {
+            // Handle errors here
+            console.error('Fetch error:', error);
+            throw error; // Propagate the error further if needed
+        });
 }
 
 function createCard(name, tktno, category, email, description, attachmentCount) {
@@ -168,11 +164,31 @@ function displayCardData(cardData) {
 
 
 getInfoElement.addEventListener("change", function() {
+
+    var files = document.getElementById("files");
+
     // This function will be executed when the "getUser" element's value changes
     var selectedValue = getInfoElement.value; // Get the selected value
+    console.log(selectedValue);
+    var tkt_no = document.getElementById("tkt_no").innerText
+    console.log(tkt_no);
+    getInfo(selectedValue, tkt_no)
+    .then(data => {
+        // Handle the response data here
+        for (let index = 0; index < data.length; index++) {
+            const element = data[index];
+            // Create a new image element
+            var img = document.createElement("img");
 
-    // You can perform actions based on the selected value here
-    console.log("Selected Value: " + selectedValue);
-    
+            // Set the src attribute to the image file's URL
+            img.src = "../assets/uploads/"+element;
+            // Add any other attributes you need, such as alt text
+            img.alt = "Image Description";
+
+            files.appendChild(img);
+
+            console.log(element);
+        }
+    });
 });
 

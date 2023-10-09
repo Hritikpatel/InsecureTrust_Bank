@@ -63,7 +63,7 @@ if ($method === "POST") {
         }
 
         
-    }elseif ($for === "accData") {
+    }elseif ($for === "accountInfo") {
         $number = $_GET["number"];
         try {
             // Prepare and execute the SQL query
@@ -75,6 +75,24 @@ if ($method === "POST") {
             
             // Encode the data as JSON
             $response = json_encode($data);
+        } catch (PDOException $e) {
+            // Handle database connection errors
+            echo "Connection failed: " . $e->getMessage();
+        }
+    }elseif ($for === "*") {
+        $tkt_no = $_GET["tkt_no"];
+        try {
+            // Prepare and execute the SQL query
+            $stmt = $pdo->prepare("SELECT attachments FROM support WHERE tkt_no = :tkt_no");
+            $stmt->bindParam(':tkt_no', $tkt_no, PDO::PARAM_STR);
+            $stmt->execute();
+
+        
+            // Fetch data from the database
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            
+            // Encode the data as JSON
+            $response = json_encode(unserialize($data[0]['attachments']));
         } catch (PDOException $e) {
             // Handle database connection errors
             echo "Connection failed: " . $e->getMessage();

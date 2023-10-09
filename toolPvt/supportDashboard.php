@@ -54,19 +54,15 @@
                                 Account Issues
                             </div>
                         </div>
-                        <div class="tktno">
-                            LEX6BQWI
+                        <div class="tktno" id="tkt_no">
+                            9MQTZQHL
                         </div>
                         <div class="info">
                             Name: Hritik Patel<br>
                             Email: hritik@em.team.lucidgrowth.com<br>
                             Description: jdv<br>
-                            Attachment: undefined Files attached<br>
                         </div>
-                        <div class="open">
-                            <button class="btn click">
-                                View
-                            </button>
+                        <div class="files"  id="files">
                         </div>
                     </div>
                 </div>
