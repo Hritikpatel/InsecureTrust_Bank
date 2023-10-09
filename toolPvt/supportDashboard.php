@@ -48,32 +48,15 @@
                             </select>
                         </div>
                     </div>
-                    <div class="tktno" id="tkt_no">
-                            9MQTZQHL
+                    <div class="form-section">
+                        <div class="form-group">
+                            <h2>Hello</h2>
+                            <div class="tktno" id="tkt_no">
+                                9MQTZQHL
+                            </div>
+                            
                         </div>
-                        <div class="files"  id="files">
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
-                                <i class="fa-solid fa-file fa-xl"></i>
-                            </a>
-                        </div>
+                    </div>
                 </div>
             </div>
         </div>
