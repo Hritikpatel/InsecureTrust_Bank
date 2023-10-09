@@ -34,7 +34,7 @@ function getAll() {
         data.forEach(cardInfo => {
             // cardholder.innerHTML = element.description;
             console.log(cardInfo);
-            var newCard = createCard(cardInfo.full_name, cardInfo.tkt_no, cardInfo.category, cardInfo.email, cardInfo.description, cardInfo.attachment);
+            var newCard = createCard(cardInfo.full_name, cardInfo.tkt_no, cardInfo.category, cardInfo.email, cardInfo.phone, cardInfo.attachments.length);
 
             // Append the newly created card to the cardholder
             cardholder.appendChild(newCard);
@@ -73,7 +73,7 @@ function getInfo(get, tkt_no) {
         });
 }
 
-function createCard(name, tktno, category, email, description, attachmentCount) {
+function createCard(name, tktno, category, email, phone, attachmentCount) {
     // Create a new card element
     var card = document.createElement("div");
     card.className = "card";
@@ -99,7 +99,7 @@ function createCard(name, tktno, category, email, description, attachmentCount) 
 
     var infoDiv = document.createElement("div");
     infoDiv.className = "info";
-    infoDiv.innerHTML = "Name: " + name + "<br>Email: " + email + "<br>Description: " + description + "<br>Attachment: " + attachmentCount + " Files attached<br>";
+    infoDiv.innerHTML = "Name: " + name + "<br>Email: " + email + "<br>Phone: " + phone + "<br>Attachment: " + attachmentCount + " Files attached<br>";
 
     var openDiv = document.createElement("div");
     openDiv.className = "open";
@@ -114,7 +114,7 @@ function createCard(name, tktno, category, email, description, attachmentCount) 
         tktno: tktno,
         category: category,
         email: email,
-        description: description,
+        phone: phone,
         attachmentCount: attachmentCount
     };
 
@@ -147,7 +147,6 @@ function createCard(name, tktno, category, email, description, attachmentCount) 
 
     return card;
 }
-
 
 // Function to display the card data in an alert
 function displayCardData(cardData) {

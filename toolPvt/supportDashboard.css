@@ -5,7 +5,7 @@
     --active-color: black;
     --inactive-color: rgb(140, 140, 140);
     --White: white;
-    --color: rgb(240, 240, 240);
+    --color240: rgb(240, 240, 240);
     font-size: 14px;
 }
 *::-webkit-scrollbar{
@@ -190,7 +190,6 @@ a{
     height: 100%;
     padding-block: 10px;
 }
-
 .detail{
     height: 100%;
     width: 100%;
@@ -227,4 +226,29 @@ h2 {
     margin: 0;
     font-size: 18px;
     color: #333;
+}
+.files{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: normal;
+    align-items: normal;
+    align-content: normal;
+
+    background-color: var(--color240);
+
+    width: 100%;
+    padding: 10px;
+    
+}
+.file{
+    background-color: red;
+    width: 20%;
+
+    padding: 20px;
+    border-radius: 20px;
+}
+table{
+    text-align: left;
+    font-size: 12px;
 }

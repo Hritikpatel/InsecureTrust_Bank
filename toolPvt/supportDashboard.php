@@ -48,23 +48,32 @@
                             </select>
                         </div>
                     </div>
-                    <div class="card">
-                        <div class="category">
-                            <div class="tag orange">
-                                Account Issues
-                            </div>
-                        </div>
-                        <div class="tktno" id="tkt_no">
+                    <div class="tktno" id="tkt_no">
                             9MQTZQHL
                         </div>
-                        <div class="info">
-                            Name: Hritik Patel<br>
-                            Email: hritik@em.team.lucidgrowth.com<br>
-                            Description: jdv<br>
-                        </div>
                         <div class="files"  id="files">
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
+                            <a href="http://localhost/InsecureTrust_Bank/assets/uploads/download.png" class="file">
+                                <i class="fa-solid fa-file fa-xl"></i>
+                            </a>
                         </div>
-                    </div>
                 </div>
             </div>
         </div>
