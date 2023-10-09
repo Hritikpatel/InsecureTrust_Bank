@@ -10,7 +10,9 @@ var currentClickedButton = null;
 // Get the element with the id "getInfo"
 var getInfoElement = document.getElementById("getInfo");
 
-var tkt_no = document.getElementById("tkt_no")
+var tkt_no = document.getElementById("tkt_no");
+
+var files = document.getElementById("userData");
 
 function getAll() {
     var parameters = {
@@ -156,18 +158,12 @@ function displayCardData(cardData) {
 
     tkt_no.innerText = cardData.tktno;
 
-    detail.innerHTML = "\nName: " + cardData.name + "\n" +
-    "Ticket Number: " + cardData.tktno + "\n" +
-    "Category: " + cardData.category + "\n" +
-    "Email: " + cardData.email + "\n" +
-    "Description: " + cardData.description + "\n" +
-    "Attachment Count: " + cardData.attachmentCount
-}
-
-
-getInfoElement.addEventListener("change", function() {
-
-    var files = document.getElementById("files");
+    detail.innerHTML = "Name: " + cardData.name +"<br>" +
+    "Ticket Number: " + cardData.tktno + "<br>" +
+    "Category: " + cardData.category + "<br>" +
+    "Email: " + cardData.email + "<br>" +
+    "Description: " + cardData.description + "<br>" +
+    "Attachments: ";
 
     // This function will be executed when the "getUser" element's value changes
     var selectedValue = getInfoElement.value; // Get the selected value
@@ -178,15 +174,39 @@ getInfoElement.addEventListener("change", function() {
         for (let index = 0; index < data.length; index++) {
             const element = data[index];
             // Create a new image element
-            var img = document.createElement("img");
+            var img = document.createElement("a");
 
             // Set the src attribute to the image file's URL
-            img.src = "../assets/uploads/"+element;
-            // Add any other attributes you need, such as alt text
-            img.alt = "Image Description";
+            img.href = "../assets/uploads/"+element;
+            var filename = element.split("/");
+            img.innerText = filename[filename.length - 1]
 
             files.appendChild(img);
+            console.log(element);
+        }
+    });
+}
 
+
+getInfoElement.addEventListener("change", function() {
+
+    // This function will be executed when the "getUser" element's value changes
+    var selectedValue = getInfoElement.value; // Get the selected value
+    console.log(selectedValue);
+    getInfo(selectedValue, tkt_no.innerText)
+    .then(data => {
+        // Handle the response data here
+        for (let index = 0; index < data.length; index++) {
+            const element = data[index];
+            // Create a new image element
+            var img = document.createElement("a");
+
+            // Set the src attribute to the image file's URL
+            img.href = "../assets/uploads/"+element;
+            var filename = element.split("/");
+            img.innerText = filename[filename.length - 1]
+
+            files.appendChild(img);
             console.log(element);
         }
     });

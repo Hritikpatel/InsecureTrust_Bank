@@ -152,7 +152,7 @@ a{
     margin-bottom: 20px;
     background-color: var(--White);
     border-radius: 20px;
-    overflow: hidden;
+    overflow: scroll;
 }
 .card{ 
     display: grid;
