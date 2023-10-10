@@ -9,15 +9,12 @@
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
 
     try {
-        // Prepare and execute the SQL query
-        $stmt = $pdo->prepare("SELECT full_name, email, description, category, attachments, phone, tkt_no FROM support WHERE isActive IS TRUE");
-        $stmt->execute();
-    
-        // Fetch data from the database
-        $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        for ($i=0; $i < sizeof($data); $i++) { 
-            $data[$i]['attachments'] = unserialize($data[$i]['attachments']);
-        }
+       $stmt = $pdo->prepare("SELECT * FROM account WHERE Phone == $number");
+       $stmt->execute();
+   
+       // Fetch data from the database
+       $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+       
         // Encode the data as JSON
         $response = json_encode($data);
     } catch (PDOException $e) {

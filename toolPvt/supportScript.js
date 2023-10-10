@@ -49,10 +49,10 @@ function getAll() {
     });
 }
 
-function getInfo(get, tkt_no) {
+function getInfo(get, number) {
     var parameters = {
         for: get,
-        tkt_no: tkt_no
+        number: number
     };
 
     // Create a URLSearchParams object to encode the parameters
@@ -102,7 +102,32 @@ function createCard(name, tktno, category, email, phone, description, attachment
 
     var infoDiv = document.createElement("div");
     infoDiv.className = "info";
-    infoDiv.innerHTML = "Name: " + name + "<br>Email: " + email + "<br>Phone: " + phone + "<br>Attachment: " + attachmentCount + " Files attached<br>";
+
+    // Create spans for different pieces of data with IDs
+    var nameSpan = document.createElement("span");
+    nameSpan.id = "name";
+    nameSpan.textContent = "Name: " + name;
+
+    var emailSpan = document.createElement("span");
+    emailSpan.id = "email";
+    emailSpan.textContent = "Email: " + email;
+
+    var phoneSpan = document.createElement("span");
+    phoneSpan.id = "phone";
+    phoneSpan.textContent = "Phone: " + phone;
+
+    var attachmentCountSpan = document.createElement("span");
+    attachmentCountSpan.id = "attachmentCountSpan";
+    attachmentCountSpan.textContent = "Attachment: " + attachmentCount + " Files attached";
+
+    // Append the spans to the infoDiv
+    infoDiv.appendChild(nameSpan);
+    infoDiv.appendChild(document.createElement("br")); // Add line break
+    infoDiv.appendChild(emailSpan);
+    infoDiv.appendChild(document.createElement("br"));
+    infoDiv.appendChild(phoneSpan);
+    infoDiv.appendChild(document.createElement("br"));
+    infoDiv.appendChild(attachmentCountSpan);
 
     var openDiv = document.createElement("div");
     openDiv.className = "open";
@@ -154,37 +179,77 @@ function createCard(name, tktno, category, email, phone, description, attachment
 
 // Function to display the card data in an alert
 function displayCardData(cardData) {
-    var detail = document.getElementById("userData");
+    userData.innerHTML = "";
 
     tkt_no.innerText = cardData.tktno;
 
-    detail.innerHTML = "Name: " + cardData.name +"<br>" +
-    "Ticket Number: " + cardData.tktno + "<br>" +
-    "Category: " + cardData.category + "<br>" +
-    "Email: " + cardData.email + "<br>" +
-    "Description: " + cardData.description + "<br>" +
-    "Attachments: ";
+    // Create spans for different pieces of data with IDs
+    var nameSpan = document.createElement("span");
+    nameSpan.id = "name";
+    nameSpan.textContent = "Name: " + cardData.name;
+
+    var emailSpan = document.createElement("span");
+    emailSpan.id = "email";
+    emailSpan.textContent = "Email: " + cardData.email;
+
+    var phoneSpan = document.createElement("span");
+    phoneSpan.id = "phone";
+    phoneSpan.textContent = "Phone: " + cardData.phone;
+
+    var descSpan = document.createElement("span");
+    descSpan.id = "desc";
+    // descSpan.textContent = "Description: ";
+    descSpan.innerHTML = "Description: "+cardData.description;
+
+    var attachmentCountSpan = document.createElement("span");
+    attachmentCountSpan.id = "attachmentCountSpan";
+    attachmentCountSpan.textContent = "Attachment: " + cardData.attachmentCount + " Files attached";
+
+    // Append the spans to the infoDiv
+    userData.appendChild(nameSpan);
+    userData.appendChild(document.createElement("br")); // Add line break
+    userData.appendChild(emailSpan);
+    userData.appendChild(document.createElement("br"));
+    userData.appendChild(phoneSpan);
+    userData.appendChild(document.createElement("br"));
+    userData.appendChild(descSpan);
+    userData.appendChild(document.createElement("br"));
+    userData.appendChild(attachmentCountSpan);
+
+
 
     // This function will be executed when the "getUser" element's value changes
     var selectedValue = getInfoElement.value; // Get the selected value
+    
     console.log(selectedValue);
-    getInfo(selectedValue, tkt_no.innerText)
-    .then(data => {
-        // Handle the response data here
-        for (let index = 0; index < data.length; index++) {
-            const element = data[index];
-            // Create a new image element
-            var img = document.createElement("a");
 
-            // Set the src attribute to the image file's URL
-            img.href = "../assets/uploads/"+element;
-            var filename = element.split("/");
-            img.innerText = filename[filename.length - 1]
+    var phone = document.getElementById(phone);
 
-            files.appendChild(img);
-            console.log(element);
-        }
-    });
+    if (selectedValue === "*") {
+        getInfo(selectedValue, cardData.tktno)
+        .then(data => {
+            // Handle the response data here
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+                // Create a new image element
+                var img = document.createElement("a");
+    
+                // Set the src attribute to the image file's URL
+                img.href = "../assets/uploads/"+element;
+                var filename = element.split("/");
+                img.innerText = filename[filename.length - 1]
+    
+                files.appendChild(img);
+                console.log(element);
+            }
+        });
+    } else if(selectedValue === "accountInfo"){
+        console.log(phone)
+        getInfo(selectedValue, phone.innerText)
+        .then(data => {
+            console.log(data);
+        });
+    }
 }
 
 
@@ -192,23 +257,36 @@ getInfoElement.addEventListener("change", function() {
 
     // This function will be executed when the "getUser" element's value changes
     var selectedValue = getInfoElement.value; // Get the selected value
-    console.log(selectedValue);
-    getInfo(selectedValue, tkt_no.innerText)
-    .then(data => {
-        // Handle the response data here
-        for (let index = 0; index < data.length; index++) {
-            const element = data[index];
-            // Create a new image element
-            var img = document.createElement("a");
 
-            // Set the src attribute to the image file's URL
-            img.href = "../assets/uploads/"+element;
-            var filename = element.split("/");
-            img.innerText = filename[filename.length - 1]
-
-            files.appendChild(img);
-            console.log(element);
-        }
-    });
+    getData(selectedValue);
 });
 
+function getData(selectedValue) {
+    if (selectedValue === "*") {
+        getInfo(selectedValue, tkt_no.innerText)
+        .then(data => {
+            // Handle the response data here
+            for (let index = 0; index < data.length; index++) {
+                const element = data[index];
+                // Create a new image element
+                var img = document.createElement("a");
+    
+                // Set the src attribute to the image file's URL
+                img.href = "../assets/uploads/"+element;
+                var filename = element.split("/");
+                img.innerText = filename[filename.length - 1]
+    
+                files.appendChild(img);
+                console.log(element);
+            }
+        });
+    } else if(selectedValue === "accountInfo"){
+        
+        var phone = document.getElementById(phone);
+        console.log(phone)
+        getInfo(selectedValue, phone.innerText)
+        .then(data => {
+            console.log(data);
+        });
+    }
+}

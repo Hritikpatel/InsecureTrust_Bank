@@ -69,7 +69,7 @@ if ($method === "POST") {
         $number = $_GET["number"];
         try {
             // Prepare and execute the SQL query
-            $stmt = $pdo->prepare("SELECT * FROM accounts WHERE number == $number");
+            $stmt = $pdo->prepare("SELECT * FROM account WHERE Phone == $number");
             $stmt->execute();
         
             // Fetch data from the database
@@ -82,7 +82,7 @@ if ($method === "POST") {
             echo "Connection failed: " . $e->getMessage();
         }
     }elseif ($for === "*") {
-        $tkt_no = $_GET["tkt_no"];
+        $tkt_no = $_GET["number"];
         try {
             // Prepare and execute the SQL query
             $stmt = $pdo->prepare("SELECT attachments FROM support WHERE tkt_no = :tkt_no");

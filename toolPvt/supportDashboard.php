@@ -39,9 +39,9 @@
                 <div class="detail"  id="detail">
                     <div class="form-section">
                         <div class="form-group">
-                            <label for="getInfo"><h2>User Query</h2></label>
+                            <label for="getInfo"><h2>Get Data</h2></label>
                             <select name="getInfo" id="getInfo">
-                                <option value="" disabled>Get info</option>
+                                <option value="">Get info</option>
                                 <option value="accountInfo">Account Info</option>
                                 <option value="transactionInfo">Transaction Info</option>
                                 <option value="*">All Info</option>
@@ -50,10 +50,20 @@
                     </div>
                     <div class="form-section">
                         <div class="form-group">
-                            <h2>User Data</h2>
+                            <h2>User Query</h2>
                             <div class="tkt_no" id="tkt_no">
                             </div>
                             <div id="userData">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-section">
+                        <div class="form-group">
+                            <h2>Account Data</h2>
+                            <div class="tkt_no" id="tkt_no">
+                            </div>
+                            <div id="accData">
 
                             </div>
                         </div>
