@@ -1,22 +1,39 @@
 <?php
     session_start();
 
-
     $method = $_SERVER["REQUEST_METHOD"];
 
+    if ($method == "GET") {
+        // Get the user ID from the query string
+        $user = str_replace("%20" , " ", $_GET["userID"]);
 
-    if ($method == "GET"){
-        
-        $user = $_GET["userID"];
-        // Your data or processing logic here
-        $responseData = ["message" => "Data from PHP", "USER" => $user];
-        
-        // Set the Content-Type header to indicate JSON
-        header("Content-Type: application/json");
+        // Database connection parameters
+        $host = 'localhost';
+        $dbname = 'itb';
+        $username = 'root';
+        $password = '';
 
-        // session_destroy();
+        // Create a new PDO instance
+        $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+
+        try {
+            // Prepare and execute the SQL query with a parameter placeholder
+            $stmt = $pdo->prepare("SELECT * FROM account WHERE Name = :user");
+            $stmt->bindParam(':user', $user, PDO::PARAM_STR); // Bind the parameter
+            $stmt->execute();
+
+            // Fetch data from the database
+            $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            // Encode the data as JSON
+            $response = json_encode($data);
+        } catch (PDOException $e) {
+            // Handle database connection errors
+            echo "Connection failed: " . $e->getMessage();
+        }
+
         // Return the JSON-encoded data
-        echo json_encode($responseData);
+        header("Content-Type: application/json");
+        echo $response;
     }
-
 ?>
