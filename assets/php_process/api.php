@@ -25,8 +25,15 @@
             // Fetch data from the database
             $data = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-            // Encode the data as JSON
             $response = json_encode($data);
+            $codedResponse = base64_encode($response);
+
+            $jsonResponse = array(
+                "response" => $codedResponse
+            );
+
+            $jdd = json_encode($jsonResponse);
+
         } catch (PDOException $e) {
             // Handle database connection errors
             echo "Connection failed: " . $e->getMessage();
@@ -34,6 +41,6 @@
 
         // Return the JSON-encoded data
         header("Content-Type: application/json");
-        echo $response;
+        echo $jdd;
     }
 ?>

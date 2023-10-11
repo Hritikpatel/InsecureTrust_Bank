@@ -4,6 +4,7 @@ var userID = document.cookie.split('; ').find(cookie => cookie.startsWith('logge
 if (userID) {
     userID = userID.split('=')[1];
     console.log(userID);
+
     // JavaScript (using jQuery for simplicity)
     $.ajax({
         url: '../assets/php_process/api.php', // PHP script URL
@@ -12,9 +13,16 @@ if (userID) {
             userID: userID
         },
         success: function(response) {
-            var userData = response;
-            console.log(userData);
-           
+            console.log(response["response"]);
+            // Decode the base64 response
+            var decodedResponse = atob(response["response"]);
+
+            // Now you have the decoded data as a string
+            console.log(decodedResponse);
+
+            // You can parse the JSON if needed
+            var userData = JSON.parse(decodedResponse);
+
             // Call the function to add data to the HTML
             addDataToHTML(userData);
         },
@@ -22,8 +30,8 @@ if (userID) {
             console.error('Error fetching data from PHP');
         }
     });
-
 }
+
 
 
 // Function to create and populate a table row

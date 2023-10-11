@@ -1,13 +1,6 @@
 <!-- dashboard.php -->
 <?php
     session_start();
-    if (!$_SESSION["authenticated"]) {
-        // Redirect the user to the login page if not authenticated
-         header("Location: login.php");
-         exit();
-    } else{
-        setcookie("loggedUser", $_SESSION["user_id"], time() + 30, "/");
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,7 +22,13 @@
             <li class="item"><a href="support.php">Support</a></li>
             <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
-        <a href="login.php" ><button type="button" class="btn">Logout</button></a>
+        <?php
+            if (isset($_SESSION["authenticated"]) && $_SESSION["authenticated"]){
+                echo '<a href="login.php" ><button type="button" class="btn">Logout</button></a>';
+            }else{
+                echo '<a href="login.php" ><button type="button" class="btn">Login</button></a>';
+            }
+        ?>
     </nav>
     <div class="body">
         <h1>Discover Our Bank's Rich History and Commitment to Excellence</h1>
