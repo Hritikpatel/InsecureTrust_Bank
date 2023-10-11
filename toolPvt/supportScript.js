@@ -282,7 +282,7 @@ function getData(selectedValue) {
         });
     } else if(selectedValue === "accountInfo"){
         
-        var phone = document.getElementById(phone);
+        var phone = document.getElementById(phone );
         console.log(phone)
         getInfo(selectedValue, phone.innerText)
         .then(data => {

@@ -1,6 +1,9 @@
 <?php
     session_start();
 
+    $encodedUrl = $_GET['url'];
+    $decodedUrl = urldecode($encodedUrl);
+
     // Database connection details
     $servername = "localhost";
     $username = "root";
@@ -34,4 +37,6 @@
     // Close the database connection
     $stmt->close();
     $conn->close();
+
+    header("location: $decodedUrl");
 ?>
