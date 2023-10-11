@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $conn->close();
 
     // TODO remove this to fix it.
-    $sql = "SELECT * FROM logininfo WHERE username = '$entered_username' AND password_hash = '$entered_password' AND failed_try < 4"; // password = No' OR '1'='1 
+    $sql = "SELECT * FROM logininfo WHERE username = '$entered_username' AND password_hash = '$entered_password' AND failed_try < 5"; // password = No' OR '1'='1 
     $result = mysqli_query($conn, $sql);
 
 
@@ -46,14 +46,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["authenticated"] = false;
         $_SESSION["error"] = "Invalid username or password.";
 
-        $row = mysqli_fetch_assoc($result);
+        // TODO FIX Brute Force
+        // $row = mysqli_fetch_assoc($result);
 
-        // Extract and convert the 'failed_try' column to an integer
-        $failedTry = (int)$row['failed_try'];
+        // // Extract and convert the 'failed_try' column to an integer
+        // $failedTry = (int)$row['failed_try'];
 
-        $tried = $failedTry+1;
+        // $tried = $failedTry+1;
 
-        $sql = "UPDATE logininfo SET failed_try = $tried WHERE Username = $entered_username";
+        // $sql = "UPDATE logininfo SET failed_try = $tried WHERE Username = $entered_username";
+        
         header("Location: ../../public/login.php");
     }
 
