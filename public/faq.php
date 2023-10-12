@@ -48,11 +48,7 @@
 
                         // TODO Problem 
                         $searchQuery = $_GET[ 'search' ];
-                        
-                        // TODO FIX
-                        // $searchQuery = $_GET["search"];
-                        // $searchQuery = strtolower($searchQuery);
-
+                    
                         // <scr<script>ipt>
                         // while ((strpos($searchQuery,"script"))) {
                         //     $searchQuery = str_replace("script","!!!",$searchQuery);

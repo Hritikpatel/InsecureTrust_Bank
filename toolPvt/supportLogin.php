@@ -22,11 +22,7 @@
             ITB
         </div>
         <ul class="list">
-            <li class="item"><a href="index.php">Home</a></li>
-            <li class="item"><a href="about.php">About Us</a></li>
             <li class="item"><a href="login.php" class="active">Log In</a></li>
-            <li class="item"><a href="support.php">Support</a></li>
-            <li class="item"><a href="faq.php">FAQs</a></li>
         </ul>
         <a href="login.php"><button type="button" class="btn">Sign up</button></a>
     </nav>

@@ -13,15 +13,7 @@ if (userID) {
             userID: userID
         },
         success: function(response) {
-            console.log(response["response"]);
-            // Decode the base64 response
-            var decodedResponse = atob(response["response"]);
-
-            // Now you have the decoded data as a string
-            console.log(decodedResponse);
-
-            // You can parse the JSON if needed
-            var userData = JSON.parse(decodedResponse);
+            var userData = response;
 
             // Call the function to add data to the HTML
             addDataToHTML(userData);
