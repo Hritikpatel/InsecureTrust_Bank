@@ -44,12 +44,6 @@
                     <input type="text" id="password" name="password" required>
                 </div>
             </div>
-            <!-- <div class="form-section">
-                <div class="form-group">
-                    <label for="otp">OTP:</label>
-                    <input type="text" id="otp" name="otp">
-                </div>
-            </div> -->
             <!-- Submit Button -->
             <button type="submit">LOG IN</button>
         </form>
