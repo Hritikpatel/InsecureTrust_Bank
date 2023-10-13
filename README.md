@@ -57,7 +57,7 @@ Together, let's navigate the challenges of cloud architectures and security by e
 - Start MySQL server on 3306.
 - [visit-local] localhost/InsecureTrust_Bank
 
-## Vulnerablitis
+## Vulnerabilities
 1. R-XSS
     - R-XSS is a type of cross-site scripting vulnerability where an attacker injects malicious scripts that are reflected off a web server and executed in a victim's browser.
     - CVE code: ```CVE-2023-29457```
