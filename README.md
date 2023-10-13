@@ -4,7 +4,7 @@
 ### InsecureTrust Bank
 Welcome to the "InsecureTrust Bank" project, a unique exploration of cloud architectures and security. This project intentionally showcases various vulnerabilities within a banking website hosted on an Azure virtual machine. Its primary purpose is to serve as an educational tool to highlight the critical importance of robust security practices in today's digital landscape.
 
-Insecure Trust Bank is a deliberately designed, insecure web application that mimics a banking website. It features a range of security weaknesses, misconfigurations, and vulnerabilities commonly found in real-world cloud-based systems. By studying these flaws in a controlled environment, this project aims to promote awareness, understanding, and best practices in cloud security.
+InsecureTrust Bank is a deliberately designed, insecure web application that mimics a banking website. It features a range of security weaknesses, misconfigurations, and vulnerabilities commonly found in real-world cloud-based systems. By studying these flaws in a controlled environment, this project aims to promote awareness, understanding, and best practices in cloud security.
 
 ## Features
 
@@ -18,45 +18,41 @@ This project is for educational and awareness purposes only and should not be us
 Together, let's navigate the challenges of cloud architectures and security by examining the vulnerabilities within the "InsecureTrust Bank" project. We believe that by understanding the risks, we can better protect the digital assets of organizations and individuals alike.
 
 
-## Tech
+## Tech Stack
 
-"Insecure Trust Bank" (ITB) relies on a variety of technologies to function seamlessly:
+"InsecureTrust Bank" (ITB) relies on a variety of technologies to function seamlessly:
 
 - [XAMPP] - ITB utilizes XAMPP to manage client requests and handle server-side operations.
 - [PHP] - PHP serves as the foundational framework for ITB, enabling server-side scripting and data processing.
 - [JS] - JavaScript plays a crucial role in ITB, handling client-side requests and enhancing interactivity.
 - [jQuery] - jQuery is used for client-side scripting and simplifying tasks that involve HTML document traversal and manipulation.
-- [CSS] - Cascading Style Sheets (CSS) are employed to infuse visual appeal and style into the website.
-
-
-And of course ITB itself is open source with a [public repository][ITB]
- on GitHub.
-
+- [CSS] - CSS are employed to infuse visual appeal and style into the website.
+- [SQL] - SQL are employed to store and manage data in structured format.
 
 ## Installation Guide
 
 ##### Prerequisites
 - Ensure you have Git installed on your computer. If not, you can download and install it from [Git's official website](https://git-scm.com/downloads).
 
-#### Step 1: Open your Command Line or Terminal
+##### Step 1: Open your Command Line or Terminal
 - On Windows, you can use the Command Prompt or Git Bash.
 - On macOS and Linux, use the Terminal.
 
-#### Step 2: Navigate to the Directory Where You Want to Install the Project
+##### Step 2: Navigate to the Directory Where You Want to Install the Project
 - Use the `cd` command to navigate to the directory where you want to store the "Insecure Trust Bank" project on your local machine. For example:
    
    ```bash
    cd /XAMPP/htdocs/
     ```
 
-#### Step 3: Clone the Repository
+##### Step 3: Clone the Repository
 - Use the following command to clone the "Insecure Trust Bank" project repository from GitHub:
 
     ```bash
        git clone "https://github.com/Hritikpatel/InsecureTrust_Bank.git"
     ```
     This command will initiate the cloning process, downloading the project's files to your local directory.
-#### Step 4: Run [XAMPP] server
+##### Step 4: Run [XAMPP] server
 - Start Apache server on port 80, 443.
 - Start MySQL server on 3306.
 - [visit-local] localhost/InsecureTrust_Bank
@@ -70,6 +66,7 @@ And of course ITB itself is open source with a [public repository][ITB]
         ```HTML 
         <span onmouseover="window.location='try.php?url='+encodeURIComponent(window.location.href)">Hover over me</span>
         ```
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/support_request.php#L38), Here user input is accepted as it is...
 
 2. R-XSS
     - R-XSS is a type of cross-site scripting vulnerability where an attacker injects malicious scripts that are reflected off a web server and executed in a victim's browser.
@@ -106,6 +103,7 @@ And of course ITB itself is open source with a [public repository][ITB]
             window.URL.revokeObjectURL(url);
         </script>
         ```
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/public/faq.php#L58), Here user input is getting appended in HTML as it is...
 3. SQL Injection
     - SQL Injection is a malicious technique where an attacker inserts or manipulates SQL queries within an web app's input fields, potentially allowing unauthorized access, data retrieval, modification, or deletion in a connected database, posing significant security risks.
     - CVE code: ```CVE-2023-4485```
@@ -114,6 +112,8 @@ And of course ITB itself is open source with a [public repository][ITB]
         ```HTML
         NO' OR '1' = '1
         ```
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/login_process.php#L27), Here database query is getting genrated using string concat...
+    
 4. File Injection
     - File Injection is a security vulnerability where an attacker can manipulate or inject malicious files, typically to exploit a system's processing and execute unauthorized code or access sensitive data, potentially compromising system integrity and security.
     - CVE code: ```CVE-2020-25048```
@@ -122,25 +122,29 @@ And of course ITB itself is open source with a [public repository][ITB]
         ```HTML
         ./try.php
         ```
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/support_request.php#L65), Here we are saving whatever files we are reciving from client...
 5. Insecure API
     - Insecure API refers to an application programming interface that lacks proper security measures, making it susceptible to various threats such as data breaches, unauthorized access, and manipulation, highlighting the need for robust security practices to protect sensitive data and ensure the integrity of communication.
     - CVE code: ```CVE-2023-40729```
-    - In ITB, all data to is transferred thorugh insecure API [Dashboard Page]
-    
+    - In ITB, all data in [Dashboard Page] is coming thorugh insecure API.
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/api.php#L37), Here we are forwarding SQL response to client with out encrypting...
+
+## Vulnerablity mentioned above are resolved in [STB]
 
 
-
-[//]: # 
+[//]: #
 
    [ITB]: <https://github.com/Hritikpatel/InsecureTrust_Bank>
+   [STB]: <https://github.com/Hritikpatel/SecureTrust_Bank>
    [Visit-Local]: <http://localhost/InsecureTrust_Bank/>
-   [Support Page]: <http://localhost/InsecureTrust_Bank/public/support.php>
-   [FAQ Page]: <http://localhost/InsecureTrust_Bank/public/faq.php>
-   [LogIn Page]: <http://localhost/InsecureTrust_Bank/public/login.php>
-   [dashboard Page]: <http://localhost/InsecureTrust_Bank/public/dashboard.php>
+   [Support Page]: <http://74.235.107.26/InsecureTrust_Bank/public/support.php>
+   [FAQ Page]: <http://74.235.107.26/InsecureTrust_Bank/public/faq.php>
+   [LogIn Page]: <http://74.235.107.26/InsecureTrust_Bank/public/login.php>
+   [dashboard Page]: <http://74.235.107.26/InsecureTrust_Bank/public/dashboard.php>
    [JS]: <https://www.javascript.com/>
    [jQuery]: <http://jquery.com>
    [XAMPP]: <https://www.apachefriends.org/>
    [PHP]: <https://www.php.net/>
    [CSS]: <https://developer.mozilla.org/en-US/docs/Web/CSS>
    [https://shorturl.at/ckvAF]: <https://shorturl.at/ckvAF>
+   [SQL]: <https://www.microsoft.com/en-us/sql-server/sql-server-downloads>
