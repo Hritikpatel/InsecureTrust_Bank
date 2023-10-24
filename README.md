@@ -129,7 +129,7 @@ VALUES
     ('Bob Jones', 'bobjones@example.com', '5555555555', 'Billing Inquiries', 'I need information about my bill.', 'KLMNO123', 1, NULL),
     ('Emily Wilson', 'emilywilson@example.com', '3333333333', 'Technical Support', 'I need technical assistance.', 'PQRSTU567', 1, NULL),
     ('Michael Brown', 'michaelbrown@example.com', '6666666666', 'Technical Support', 'I have a technical question.', 'VWXYZA789', 1, NULL),
-    ('Hritik Patel', 'hritik@example.com', '1111111111', 'Account Issues', 'I'm having problems with my account.', 'BCDEFG012', 1, NULL),
+    ('Hritik Patel', 'hritik@example.com', '1111111111', 'Account Issues', 'I am having problems with my account.', 'BCDEFG012', 1, NULL),
     ('John Smith', 'john@example.com', '2222222222', 'Technical Support', 'I need help with a technical issue.', 'HIJKLM345', 1, NULL);
 
 
