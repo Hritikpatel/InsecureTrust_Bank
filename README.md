@@ -209,7 +209,7 @@ VALUES
     - In ITB, all data in [Dashboard Page] is coming thorugh insecure API.
     - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/api.php#L37), Here we are forwarding SQL response to client with out encrypting...
 
-## Vulnerablity mentioned above are resolved in [STB]
+## Vulnerability mentioned above are resolved in [STB]
 
 
 [//]: #
