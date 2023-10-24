@@ -217,10 +217,10 @@ VALUES
    [ITB]: <https://github.com/Hritikpatel/InsecureTrust_Bank>
    [STB]: <https://github.com/Hritikpatel/SecureTrust_Bank>
    [Visit-Local]: <http://localhost/InsecureTrust_Bank/>
-   [Support Page]: <http://74.235.107.26/InsecureTrust_Bank/public/support.php>
-   [FAQ Page]: <http://74.235.107.26/InsecureTrust_Bank/public/faq.php>
-   [LogIn Page]: <http://74.235.107.26/InsecureTrust_Bank/public/login.php>
-   [dashboard Page]: <http://74.235.107.26/InsecureTrust_Bank/public/dashboard.php>
+   [Support Page]: <http://localhost/InsecureTrust_Bank/public/support.php>
+   [FAQ Page]: <http://localhost/InsecureTrust_Bank/public/faq.php>
+   [LogIn Page]: <http://localhost/InsecureTrust_Bank/public/login.php>
+   [dashboard Page]: <http://localhost/InsecureTrust_Bank/public/dashboard.php>
    [JS]: <https://www.javascript.com/>
    [jQuery]: <http://jquery.com>
    [XAMPP]: <https://www.apachefriends.org/>
