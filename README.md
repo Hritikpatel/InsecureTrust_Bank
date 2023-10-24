@@ -86,7 +86,7 @@ Together, let's navigate the challenges of cloud architectures and security by e
         Username VARCHAR(50) NOT NULL,
         Password VARCHAR(255) NOT NULL,
         Email VARCHAR(100) NOT NULL,
-        FailedTry INT(11) NOT NULL DEFAULT 0,
+        Failed_Try INT(11) NOT NULL DEFAULT 0,
         PRIMARY KEY (Username)
     );
 
@@ -107,7 +107,7 @@ Together, let's navigate the challenges of cloud architectures and security by e
         ssid VARCHAR(225)
     );
 
-    INSERT INTO accounts (
+    INSERT INTO account (
         Name, DOB, Email, Phone, Adhaar, Address, AccountNumber, IFSCCode, HomeBranch, AccountType, CIBILScore, AccountStatus, NomineeName, NomineePhone, NomineeEmail, RelationshipManagerName, RelationshipManagerPhone, RelationshipManagerEmail)
     VALUES(
         'Hritik', '2009-11-26', 'hritik@gmail.com', '+01 8220846751', '2222 3245 1493', 'Bhabua', '58294869992', 'ABCD1234567', 'Bhabua City', 'Savings', 750, 'Active', 'Jane Doe', '+11234567890', 'xyz@mail.com', 'John Doe', '+11234433247', 'RM@ITB.com'),('John Smith', '1985-03-15', 'john.smith@gmail.com', '+19876543210', '1234 5678 9012', 'New York', '1234567890', 'EFGH9876543', 'New York City', 'Checking', 800, 'Active', 'Alice Johnson', '+11234567890', 'alice@mail.com', 'David Wilson', '+11234433247', 'david@mail.com'), ('Sarah Davis', '1990-07-20', 'sarah.davis@gmail.com', '+18887776655', '5678 1234 9012', 'Los Angeles', '9876543210', 'IJKL5432109', 'Los Angeles City', 'Savings', 720, 'Active', 'Michael Brown', '+11234567890', 'michael@mail.com', 'Emily White', '+11234433247', 'emily@mail.com');
