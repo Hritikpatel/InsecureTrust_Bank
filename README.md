@@ -174,6 +174,7 @@ VALUES
             window.URL.revokeObjectURL(url);
         </script>
         ```
+        This url shows Drive-by-Download attack which can be done by R-XSS.
     - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/public/faq.php#L58), Here user input is getting appended in HTML as it is...
 2. S-XSS
     - S-XSS typically refers to "Stored Cross-Site Scripting," where malicious scripts are stored on a web server and executed when viewed by other users, potentially leading to security vulnerabilities. 
@@ -192,16 +193,16 @@ VALUES
         ```HTML
         ./try.php
         ```
-    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/support_request.php#L65), Here we are saving whatever files we are reciving from client...
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/support_request.php#L65), Here we are saving whatever files we are receiving from client...
 4. SQL Injection
     - SQL Injection is a malicious technique where an attacker inserts or manipulates SQL queries within an web app's input fields, potentially allowing unauthorized access, data retrieval, modification, or deletion in a connected database, posing significant security risks.
     - CVE code: ```CVE-2023-4485```
-    - In ITB, [LogIn Page]'s password feild is vulnerable to SQL injection.
+    - In ITB, [LogIn Page]'s password field is vulnerable to SQL injection.
     - Sample Code to demonstrate it:
         ```HTML
         NO' OR '1' = '1
         ```
-    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/login_process.php#L27), Here database query is getting genrated using string concat...
+    - [Vulnerable Code](https://github.com/Hritikpatel/InsecureTrust_Bank/blob/0e5444c85ec418258562639c3383b31077374692/assets/php_process/login_process.php#L27), Here database query is getting generated using string concat...
     
 5. Insecure API
     - Insecure API refers to an application programming interface that lacks proper security measures, making it susceptible to various threats such as data breaches, unauthorized access, and manipulation, highlighting the need for robust security practices to protect sensitive data and ensure the integrity of communication.
